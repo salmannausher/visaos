@@ -1,0 +1,107 @@
+---
+import { getEntries, type CollectionEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Base from './Base.astro';
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const linkedSources = (await getEntries(data.sources)).filter(
+  (source): source is CollectionEntry<'sources'> => source !== undefined,
+);
+const canonicalPath = `/${data.path}/`;
+const dateModified = data.updatedAt ?? data.reviewedAt;
+const isApproved = data.editorialStatus === 'approved';
+const noindex = data.noindex || !isApproved;
+const structuredData = isApproved
+  ? {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Article',
+          headline: data.title,
+          description: data.description,
+          mainEntityOfPage: new URL(canonicalPath, Astro.site ?? Astro.url).toString(),
+          ...(dateModified ? { dateModified } : {}),
+          citation: linkedSources.map((source) => source.data.url),
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            ...data.breadcrumbs.map((item, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: item.label,
+              item: new URL(item.href, Astro.site ?? Astro.url).toString(),
+            })),
+            {
+              '@type': 'ListItem',
+              position: data.breadcrumbs.length + 1,
+              name: data.title,
+              item: new URL(canonicalPath, Astro.site ?? Astro.url).toString(),
+            },
+          ],
+        },
+      ],
+    }
+  : undefined;
+---
+
+<Base
+  title={data.title}
+  description={data.description}
+  canonicalPath={canonicalPath}
+  noindex={noindex}
+  ogType="article"
+  structuredData={structuredData}
+>
+  <article class="wrap article">
+    <Breadcrumbs items={data.breadcrumbs} current={data.title} />
+    <header class="article-header">
+      {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
+      <h1 data-pagefind-meta="title">{data.title}</h1>
+      <p class="lead">{data.summary}</p>
+      {
+        dateModified && (
+          <p class="review-date">
+            Reviewed <time datetime={dateModified}>{dateModified}</time>
+          </p>
+        )
+      }
+      {
+        !isApproved && (
+          <p class="notice" role="status">
+            This draft has not passed the VisaOS publication gates and must remain non-indexable.
+          </p>
+        )
+      }
+    </header>
+
+    <div class="article-content">
+      <slot />
+    </div>
+
+    {
+      linkedSources.length > 0 && (
+        <section class="sources" aria-labelledby="official-sources-heading">
+          <h2 id="official-sources-heading">Official sources</h2>
+          <ul>
+            {linkedSources.map((source) => (
+              <li>
+                <a href={source.data.url}>{source.data.title}</a>
+                <span>
+                  {' '}
+                  — {source.data.publisher}; checked{' '}
+                  <time datetime={source.data.lastChecked}>{source.data.lastChecked}</time>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </article>
+</Base>

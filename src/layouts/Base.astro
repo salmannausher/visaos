@@ -1,6 +1,79 @@
 ---
 import '../styles/global.css';
-const { title='VisaOS | U.S. Visa Knowledge', description='Independent, source-backed visa information and practical guidance.', canonicalPath=Astro.url.pathname } = Astro.props;
-const canonical = new URL(canonicalPath, Astro.site ?? Astro.url).toString();
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  structuredData?: Record<string, unknown>;
+}
+
+const {
+  title = 'VisaOS | U.S. Visa Knowledge',
+  description = 'Independent, source-backed visa information and practical guidance.',
+  canonicalPath = Astro.url.pathname,
+  noindex = false,
+  ogType = 'website',
+  structuredData,
+} = Astro.props;
+
+const siteOrigin = Astro.site ?? Astro.url;
+const canonical = new URL(canonicalPath, siteOrigin).toString();
+const sitemap = new URL('/sitemap-index.xml', siteOrigin).toString();
+const structuredDataJson = structuredData
+  ? JSON.stringify(structuredData).replaceAll('<', '\\u003c')
+  : undefined;
 ---
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><link rel="canonical" href={canonical}/><title>{title}</title><meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/></head><body><header class="top"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/">VisaOS</a><div class="links"><a href="/us/">U.S. visas</a><a href="/us/from/pakistan/">From Pakistan</a><a href="/us/problems/">Visa problems</a><a href="/about/">About</a></div></nav></header><main><slot/></main><footer class="footer"><div class="wrap">© {new Date().getFullYear()} VisaOS · Independent educational resource. Not a government website or legal service. Always confirm current guidance through official sources.</div></footer></body></html>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={sitemap} />
+    <title>{title}</title>
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="VisaOS" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {
+      structuredDataJson && (
+        <script type="application/ld+json" set:html={structuredDataJson}></script>
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="top" data-pagefind-ignore>
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="brand" href="/">VisaOS</a>
+        <div class="links">
+          <a href="/us/">U.S. visas</a>
+          <a href="/us/from/pakistan/">From Pakistan</a>
+          <a href="/us/problems/">Visa problems</a>
+          <a href="/about/">About</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="footer" data-pagefind-ignore>
+      <div class="wrap">
+        © {new Date().getFullYear()} VisaOS · Independent educational resource. Not a
+        government website or legal service. Always confirm current guidance through official
+        sources.
+      </div>
+    </footer>
+  </body>
+</html>
