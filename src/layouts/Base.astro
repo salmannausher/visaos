@@ -1,0 +1,6 @@
+---
+import '../styles/global.css';
+const { title='VisaOS | U.S. Visa Knowledge', description='Independent, source-backed visa information and practical guidance.', canonicalPath=Astro.url.pathname } = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url).toString();
+---
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><link rel="canonical" href={canonical}/><title>{title}</title><meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/></head><body><header class="top"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/">VisaOS</a><div class="links"><a href="/us/">U.S. visas</a><a href="/us/from/pakistan/">From Pakistan</a><a href="/us/problems/">Visa problems</a><a href="/about/">About</a></div></nav></header><main><slot/></main><footer class="footer"><div class="wrap">© {new Date().getFullYear()} VisaOS · Independent educational resource. Not a government website or legal service. Always confirm current guidance through official sources.</div></footer></body></html>
