@@ -1,1 +1,26 @@
-{"name":"visaos","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"astro dev","build":"astro check && astro build && pagefind --site dist","preview":"astro preview","check":"astro check"},"dependencies":{"astro":"^5.0.0","@astrojs/sitemap":"^3.0.0","@astrojs/check":"^0.9.0","typescript":"^5.0.0","pagefind":"^1.3.0"},"devDependencies":{}}
+{
+  "name": "visaos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0 <23",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate:repo": "node scripts/validate-repository.mjs",
+    "validate:site": "node scripts/validate-built-site.mjs",
+    "validate": "npm run validate:repo && npm run build && npm run validate:site"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^7.4.1",
+    "pagefind": "^1.3.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "U.S. Mission Pakistan Visa Information",
+  "url": "https://pk.usembassy.gov/visas/",
+  "publisher": "U.S. Mission Pakistan",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-23",
+  "volatility": "high",
+  "verificationStatus": "needs-review",
+  "topics": ["Pakistan", "post-specific visa instructions"],
+  "appliesTo": {
+    "visaClassifications": [],
+    "nationalities": [],
+    "residences": ["Pakistan"],
+    "posts": ["Islamabad", "Karachi"],
+    "notes": "Applicability must be confirmed against the instructions on the page and its officially linked providers."
+  },
+  "notes": "The official .gov URL returned an automated-access 403 during the 2026-10-23 check. An editor must verify it in a browser before using it to approve substantive guidance."
+}

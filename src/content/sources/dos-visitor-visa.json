@@ -1,0 +1,16 @@
+{
+  "title": "Visitor Visa",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-23",
+  "volatility": "medium",
+  "verificationStatus": "verified",
+  "topics": ["B-1", "B-2", "visitor visa"],
+  "appliesTo": {
+    "visaClassifications": ["B-1", "B-2", "B-1/B-2"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  }
+}
