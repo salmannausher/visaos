@@ -1,8 +1,8 @@
 # Technical Architecture — Initial Foundation
 
 - Framework: Astro + TypeScript; content: Markdown/MDX using Astro content collections.
-- CSS: Tailwind; ensure accessibility, good semantics, mobile-first UX.
-- Search: Pagefind static search once content volume justifies it.
+- CSS: dependency-free global CSS with accessible semantics and mobile-first responsive rules. The earlier Tailwind proposal was superseded by the founder's Sprint 2 decision on 2026-10-23; Tailwind may be reconsidered only if a demonstrated need outweighs its dependency and build cost.
+- Search: Pagefind static indexing at build time; add a public search interface only when content volume justifies it.
 - Hosting: Cloudflare Pages static site; GitHub repository / Actions for versioning and CI, subject to free-tier limits.
 - Data: files in Git and structured public source registry; **no database or authentication in v1**.
 - Metadata: per-page canonical, title, meta description, Open Graph, sitemap, robots, breadcrumbs and appropriate JSON-LD. Avoid assuming FAQ rich results.

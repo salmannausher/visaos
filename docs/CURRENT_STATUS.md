@@ -23,3 +23,19 @@ The notes above are retained as the original context. The following locally veri
 - `ARCHITECTURE.md` names Tailwind, while the starter uses dependency-free global CSS. Sprint 1 preserved the existing CSS to avoid an unnecessary dependency; this documented architecture discrepancy still requires an explicit owner decision.
 - GA4 was not added. Under `AGENTS.md`, analytics remains conditional on an explicit privacy, consent, retention, security, and cost review.
 - Week 1 keyword research, the first-20-page plan, approved article content, production-domain configuration, Search Console, and launch work remain outstanding.
+
+## Sprint 2 local implementation update (2026-10-24)
+
+The following state supersedes the earlier operational claims where they differ. Historical notes above are retained for traceability:
+
+- Sprint 1 is present on `main` at commit `4ad2390`. Sprint 2 work is isolated on `codex/sprint-2-seo-content-engine`; it has not been merged, pushed, or deployed.
+- The dependency-free CSS decision is now explicit. It supersedes the earlier Tailwind reference in `ARCHITECTURE.md` and follows both the founder's Sprint 2 direction and the zero-cost/minimal-dependency guidance in `AGENTS.md`.
+- The article collection has a deny-by-default publication gate. Only entries with `editorialStatus: approved` and `noindex: false` receive static routes. Draft, pending-review, rejected, and explicitly non-indexable entries do not generate public article pages.
+- Five substantive article files are prepared as drafts. They remain `noindex`, have no generated routes, and require founder approval before publication. The internal model fixture also remains non-public.
+- Direct checks were completed against the U.S. Department of State visitor-visa, DS-160 overview, DS-160 FAQ, and global visa wait-time pages. The U.S. Mission Pakistan visa page continued to return an automated-access 403, so Pakistan-specific procedures remain omitted and that source remains `needs-review`.
+- Reusable article and country-guide templates now provide accessible breadcrumbs, visible editorial/source information, canonical metadata, and Article/Breadcrumb structured data for eligible content.
+- Content validation covers publication states, canonical routes, duplicate routes, required metadata, source references, review/source freshness, country applicability, visa classification, and Markdown/breadcrumb internal links. Built-site validation additionally checks that publishable entries exist and non-publishable entries do not leak into `dist`.
+- Node's built-in test runner covers publication gates, deterministic route generation, duplicate routes, invalid sources, broken links, stale review/source dates, and metadata requirements without adding a test-framework dependency.
+- No measured keyword-research dataset or first-20-page plan exists in the repository. No keyword volumes were invented or inferred.
+- The production domain remains undecided. `https://example.com` is still a local placeholder and remains a deployment blocker; `robots.txt` intentionally has no production sitemap declaration.
+- GitHub Actions remains paused by founder direction. Local validation does not claim that remote CI has passed.

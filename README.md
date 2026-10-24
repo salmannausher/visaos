@@ -5,10 +5,20 @@ Independent, source-backed U.S. visa knowledge website built with Astro.
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
+npm run check
+npm test
 npm run build
+npm run validate
 ```
+
+## Content publishing
+
+Collection entries are private-by-default build inputs. Only founder-approved, indexable entries
+generate static routes; drafts, pending-review, rejected and non-indexable entries remain outside
+the production build. See [docs/CONTENT_PUBLISHING.md](docs/CONTENT_PUBLISHING.md) for the metadata,
+source-verification and freshness gates.
 
 ## Before deployment
 
