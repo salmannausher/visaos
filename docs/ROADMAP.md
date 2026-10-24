@@ -14,3 +14,9 @@
 12. Week 12: Review 30–40 pages as stretch goal, organic visibility, tool usage and next 90-day decision.
 
 Do not substitute volume for verification. Expanding to more source countries or a paid product is gated by evidence and maintenance capacity.
+
+## Sprint 3 research checkpoint (2026-10-24)
+
+The supplied research handoff adds 88 unmeasured keyword hypotheses and a first-20-page proposal. This is below the aspirational Week 1 candidate count and does not complete localized SERP, volume, difficulty or competitor research. All such fields remain explicitly `UNKNOWN`, `UNVERIFIED`, `NOT AUDITED` or `PENDING`.
+
+The route-level reconciliation is recorded in `docs/SPRINT_3_RESEARCH.md`. It preserves existing Astro hubs and draft routes, consolidates overlapping search intent and does not authorize new pages or publication.

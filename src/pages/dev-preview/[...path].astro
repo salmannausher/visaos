@@ -1,0 +1,120 @@
+---
+import { getCollection, getEntries, render, type CollectionEntry } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Base from '../../layouts/Base.astro';
+import CountryGuideLayout from '../../layouts/CountryGuideLayout.astro';
+import {
+  createPreviewRouteRecords,
+  isLocalPreviewHostname,
+  previewPathFor,
+} from '../../lib/content-preview.mjs';
+
+export async function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
+  const entries = await getCollection('articles');
+  return createPreviewRouteRecords(entries, { development: true });
+}
+
+type IndexProps = {
+  kind: 'index';
+  entries: CollectionEntry<'articles'>[];
+};
+
+type ArticleProps = {
+  kind: 'article';
+  entry: CollectionEntry<'articles'>;
+};
+
+type Props = IndexProps | ArticleProps;
+
+const props = Astro.props as Props;
+const isLocalRequest = import.meta.env.DEV && isLocalPreviewHostname(Astro.url.hostname);
+
+if (!isLocalRequest) Astro.response.status = 404;
+
+const indexItems =
+  isLocalRequest && props.kind === 'index'
+    ? await Promise.all(
+        props.entries.map(async (entry) => {
+          const sources = (await getEntries(entry.data.sources)).filter(
+            (source): source is CollectionEntry<'sources'> => source !== undefined,
+          );
+          const needsReview = sources.filter(
+            (source) => source.data.verificationStatus !== 'verified',
+          );
+
+          return {
+            entry,
+            previewPath: previewPathFor(entry.data.path),
+            needsReview,
+            sourceCount: sources.length,
+          };
+        }),
+      )
+    : [];
+
+let Content;
+let PreviewLayout;
+
+if (isLocalRequest && props.kind === 'article') {
+  ({ Content } = await render(props.entry));
+  PreviewLayout = props.entry.data.contentType === 'country' ? CountryGuideLayout : ArticleLayout;
+}
+---
+
+{
+  !isLocalRequest ? (
+    <Base title="Not found | VisaOS" description="This page is not available." noindex privatePreview>
+      <section class="wrap article">
+        <h1>Not found</h1>
+      </section>
+    </Base>
+  ) : props.kind === 'index' ? (
+    <Base
+      title="Draft article previews | VisaOS"
+      description="Local development index for unpublished VisaOS article drafts."
+      noindex
+      privatePreview
+    >
+      <section class="wrap article preview-index">
+        <p class="draft-preview-banner" role="status">DRAFT — NOT APPROVED FOR PUBLICATION</p>
+        <h1>Draft article previews</h1>
+        <p class="lead">
+          Local development only. These entries retain their editorial status and do not receive
+          production routes.
+        </p>
+        <ul class="preview-list">
+          {indexItems.map(({ entry, previewPath, needsReview, sourceCount }) => (
+            <li class="panel">
+              <h2><a href={previewPath}>{entry.data.title}</a></h2>
+              <dl>
+                <div>
+                  <dt>Editorial status</dt>
+                  <dd>{entry.data.editorialStatus}</dd>
+                </div>
+                <div>
+                  <dt>Source review</dt>
+                  <dd class={needsReview.length > 0 ? 'source-flag-review' : undefined}>
+                    {needsReview.length > 0
+                      ? `Needs review: ${needsReview.map((source) => source.data.title).join(', ')}`
+                      : `${sourceCount} referenced official source${sourceCount === 1 ? '' : 's'} verified`}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Sources checked</dt>
+                  <dd>{entry.data.sourceCheckedAt ?? 'Not recorded'}</dd>
+                </div>
+              </dl>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </Base>
+  ) : (
+    PreviewLayout && Content && (
+      <PreviewLayout entry={props.entry} preview>
+        <Content />
+      </PreviewLayout>
+    )
+  )
+}

@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import { SITEMAP_INDEX_PATH } from '../config/site.mjs';
 
 interface Props {
   title?: string;
   description?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  privatePreview?: boolean;
   ogType?: 'website' | 'article';
   structuredData?: Record<string, unknown>;
 }
@@ -15,13 +17,14 @@ const {
   description = 'Independent, source-backed visa information and practical guidance.',
   canonicalPath = Astro.url.pathname,
   noindex = false,
+  privatePreview = false,
   ogType = 'website',
   structuredData,
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? Astro.url;
 const canonical = new URL(canonicalPath, siteOrigin).toString();
-const sitemap = new URL('/sitemap-index.xml', siteOrigin).toString();
+const sitemap = new URL(SITEMAP_INDEX_PATH, siteOrigin).toString();
 const structuredDataJson = structuredData
   ? JSON.stringify(structuredData).replaceAll('<', '\\u003c')
   : undefined;
@@ -34,15 +37,15 @@ const structuredDataJson = structuredData
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-    <link rel="canonical" href={canonical} />
-    <link rel="sitemap" href={sitemap} />
+    {(noindex || privatePreview) && <meta name="robots" content="noindex, nofollow, noarchive" />}
+    {!privatePreview && <link rel="canonical" href={canonical} />}
+    {!privatePreview && <link rel="sitemap" href={sitemap} />}
     <title>{title}</title>
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="VisaOS" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
+    {!privatePreview && <meta property="og:url" content={canonical} />}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -65,7 +68,11 @@ const structuredDataJson = structuredData
         </div>
       </nav>
     </header>
-    <main id="main-content" data-pagefind-body>
+    <main
+      id="main-content"
+      data-pagefind-body={!privatePreview ? true : undefined}
+      data-pagefind-ignore={privatePreview ? true : undefined}
+    >
       <slot />
     </main>
     <footer class="footer" data-pagefind-ignore>

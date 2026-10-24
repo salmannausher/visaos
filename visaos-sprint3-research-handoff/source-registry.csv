@@ -1,0 +1,7 @@
+source_id,title,url,relevant_clusters,editorial_note
+STATE-VISITOR,U.S. Department of State — Visitor Visa,https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html,"visitor-basics,fees,documents",Verify current content before publication
+STATE-DS160,U.S. Department of State — DS-160,https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application.html,ds160,Official form overview
+STATE-DS160-FAQ,U.S. Department of State — DS-160 FAQ,https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html,"ds160,error-recovery",Conditions vary by application stage/post
+STATE-NIV-RESIDENCE,U.S. Department of State — NIV interviews country of residence,https://travel.state.gov/content/travel/en/News/visas-news/adjudicating-niv-applicants-in-their-country-of-residence.html,"appointment,post-location",Policy dated July 15 2026
+GOOGLE-AI-SEARCH,Google Search Central — AI features,https://developers.google.com/search/docs/appearance/ai-features,"seo,geo,aeo",Use established SEO basics
+GOOGLE-ESSENTIALS,Google Search Essentials,https://developers.google.com/search/docs/essentials,"seo,quality",Avoid scaled low-value pages
