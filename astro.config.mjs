@@ -1,3 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-export default defineConfig({ site: 'https://example.com', integrations: [sitemap()] });
+import { SITE_ORIGIN } from './src/config/site.mjs';
+
+export default defineConfig({
+  site: SITE_ORIGIN,
+  integrations: [sitemap()],
+});

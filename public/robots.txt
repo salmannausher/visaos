@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-# Add Sitemap URL after configuring the production domain.
+Sitemap: https://visaos.devshinx.dev/sitemap-index.xml

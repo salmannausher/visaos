@@ -7,9 +7,10 @@ import Base from './Base.astro';
 
 interface Props {
   entry: CollectionEntry<'articles'>;
+  preview?: boolean;
 }
 
-const { entry } = Astro.props;
+const { entry, preview = false } = Astro.props;
 const { data } = entry;
 const linkedSources = (await getEntries(data.sources)).filter(
   (source): source is CollectionEntry<'sources'> => source !== undefined,
@@ -18,7 +19,7 @@ const canonicalPath = data.canonicalPath;
 const dateModified = data.updatedAt ?? data.reviewedAt;
 const isApproved = data.editorialStatus === 'approved';
 const noindex = data.noindex || !isApproved;
-const structuredData = isApproved
+const structuredData = isApproved && !preview
   ? {
       '@context': 'https://schema.org',
       '@graph': [
@@ -63,11 +64,13 @@ const structuredData = isApproved
   title={data.title}
   description={data.description}
   canonicalPath={canonicalPath}
-  noindex={noindex}
+  noindex={noindex || preview}
+  privatePreview={preview}
   ogType="article"
   structuredData={structuredData}
 >
   <article class="wrap article">
+    {preview && <p class="draft-preview-banner" role="status">DRAFT — NOT APPROVED FOR PUBLICATION</p>}
     <Breadcrumbs items={data.breadcrumbs} current={data.title} />
     <header class="article-header">
       {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
