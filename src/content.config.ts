@@ -9,6 +9,7 @@ const httpsUrl = z.url().refine((value) => new URL(value).protocol === 'https:',
 
 const scope = z.object({
   visaClassifications: z.array(z.string().min(1)).default([]),
+  countries: z.array(z.string().regex(/^[A-Z]{2}$/, 'Use ISO 3166-1 alpha-2 country codes.')).default([]),
   nationalities: z.array(z.string().min(1)).default([]),
   residences: z.array(z.string().min(1)).default([]),
   posts: z.array(z.string().min(1)).default([]),
@@ -60,16 +61,23 @@ const articles = defineCollection({
       path: z
         .string()
         .regex(/^[a-z0-9]+(?:\/[a-z0-9-]+)*$/, 'Use a lowercase, extension-free route path.'),
+      canonicalPath: z
+        .string()
+        .regex(/^\/(?:[a-z0-9-]+\/)+$/, 'Use a lowercase internal directory URL with a trailing slash.'),
       title: z.string().min(20).max(70),
       description: z.string().min(70).max(170),
       eyebrow: z.string().min(1).optional(),
       summary: z.string().min(1),
       intent: z.string().min(1),
       contentType: z.enum(['pillar', 'country', 'question', 'problem', 'policy']),
-      editorialStatus: z.enum(['draft', 'in-review', 'approved']).default('draft'),
+      countryName: z.string().min(1).optional(),
+      editorialStatus: z.enum(['draft', 'pending-review', 'approved', 'rejected']).default('draft'),
       noindex: z.boolean().default(true),
+      sourceCheckedAt: isoDate.optional(),
       reviewedAt: isoDate.optional(),
+      reviewedBy: z.string().min(1).optional(),
       approvedAt: isoDate.optional(),
+      reviewDueAt: isoDate.optional(),
       updatedAt: isoDate.optional(),
       applicability: scope,
       sources: z.array(reference('sources')).default([]),
@@ -83,29 +91,67 @@ const articles = defineCollection({
         .min(1),
     })
     .superRefine((article, context) => {
-      if (article.editorialStatus !== 'approved') return;
-
-      if (article.noindex) {
+      const expectedCanonical = `/${article.path}/`;
+      if (article.canonicalPath !== expectedCanonical) {
         context.addIssue({
           code: 'custom',
-          path: ['noindex'],
-          message: 'Approved articles must be indexable.',
+          path: ['canonicalPath'],
+          message: `Canonical path must match the route: ${expectedCanonical}`,
         });
       }
 
-      if (!article.reviewedAt || !article.approvedAt) {
+      if (article.contentType === 'country') {
+        if (!article.countryName || article.applicability.countries.length === 0) {
+          context.addIssue({
+            code: 'custom',
+            path: ['countryName'],
+            message: 'Country guides require countryName and at least one applicable ISO country code.',
+          });
+        }
+      }
+
+      if (article.contentType !== 'policy') {
+        if (!article.sourceCheckedAt) {
+          context.addIssue({
+            code: 'custom',
+            path: ['sourceCheckedAt'],
+            message: 'Visa content requires a sourceCheckedAt date.',
+          });
+        }
+
+        if (article.sources.length === 0) {
+          context.addIssue({
+            code: 'custom',
+            path: ['sources'],
+            message: 'Visa content requires at least one official source reference.',
+          });
+        }
+
+        if (article.applicability.visaClassifications.length === 0) {
+          context.addIssue({
+            code: 'custom',
+            path: ['applicability', 'visaClassifications'],
+            message: 'Visa content must identify at least one applicable visa classification.',
+          });
+        }
+      }
+
+      if (article.editorialStatus !== 'approved') {
+        if (!article.noindex) {
+          context.addIssue({
+            code: 'custom',
+            path: ['noindex'],
+            message: 'Draft, pending-review, and rejected content must remain non-indexable.',
+          });
+        }
+        return;
+      }
+
+      if (!article.reviewedAt || !article.reviewedBy || !article.approvedAt || !article.reviewDueAt) {
         context.addIssue({
           code: 'custom',
           path: ['editorialStatus'],
-          message: 'Approved articles require reviewedAt and approvedAt dates.',
-        });
-      }
-
-      if (article.sources.length === 0 && article.contentType !== 'policy') {
-        context.addIssue({
-          code: 'custom',
-          path: ['sources'],
-          message: 'Approved visa articles require at least one official source.',
+          message: 'Approved articles require reviewer, review, approval, and next-review dates.',
         });
       }
     }),

@@ -1,0 +1,23 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import CountryGuideLayout from '../layouts/CountryGuideLayout.astro';
+import { createArticleRouteRecords } from '../lib/content-publication.mjs';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('articles');
+  return createArticleRouteRecords(entries);
+}
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const Layout = entry.data.contentType === 'country' ? CountryGuideLayout : ArticleLayout;
+---
+
+<Layout entry={entry}>
+  <Content />
+</Layout>

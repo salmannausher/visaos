@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ArticleLayout from './ArticleLayout.astro';
+
+interface Props {
+  entry: CollectionEntry<'articles'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+---
+
+<ArticleLayout entry={entry}>
+  <section class="country-scope" aria-labelledby="country-scope-heading">
+    <h2 id="country-scope-heading">Country and application scope</h2>
+    <dl>
+      <div>
+        <dt>Country context</dt>
+        <dd>{data.countryName}</dd>
+      </div>
+      <div>
+        <dt>Visa categories</dt>
+        <dd>{data.applicability.visaClassifications.join(', ')}</dd>
+      </div>
+      {
+        data.applicability.posts.length > 0 && (
+          <div>
+            <dt>Application posts</dt>
+            <dd>{data.applicability.posts.join(', ')}</dd>
+          </div>
+        )
+      }
+    </dl>
+    <p>
+      Nationality, residence, and interview location are different facts. This guide applies only
+      to the scope stated above and does not replace post-specific instructions.
+    </p>
+  </section>
+  <slot />
+</ArticleLayout>

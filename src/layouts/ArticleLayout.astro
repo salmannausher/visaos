@@ -1,6 +1,8 @@
 ---
 import { getEntries, type CollectionEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EditorialReview from '../components/EditorialReview.astro';
+import SourceReferences from '../components/SourceReferences.astro';
 import Base from './Base.astro';
 
 interface Props {
@@ -12,7 +14,7 @@ const { data } = entry;
 const linkedSources = (await getEntries(data.sources)).filter(
   (source): source is CollectionEntry<'sources'> => source !== undefined,
 );
-const canonicalPath = `/${data.path}/`;
+const canonicalPath = data.canonicalPath;
 const dateModified = data.updatedAt ?? data.reviewedAt;
 const isApproved = data.editorialStatus === 'approved';
 const noindex = data.noindex || !isApproved;
@@ -25,7 +27,14 @@ const structuredData = isApproved
           headline: data.title,
           description: data.description,
           mainEntityOfPage: new URL(canonicalPath, Astro.site ?? Astro.url).toString(),
+          ...(data.approvedAt ? { datePublished: data.approvedAt } : {}),
           ...(dateModified ? { dateModified } : {}),
+          ...(data.applicability.visaClassifications.length > 0
+            ? { about: data.applicability.visaClassifications }
+            : {}),
+          ...(data.contentType === 'country' && data.countryName
+            ? { spatialCoverage: data.countryName }
+            : {}),
           citation: linkedSources.map((source) => source.data.url),
         },
         {
@@ -64,13 +73,7 @@ const structuredData = isApproved
       {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
       <h1 data-pagefind-meta="title">{data.title}</h1>
       <p class="lead">{data.summary}</p>
-      {
-        dateModified && (
-          <p class="review-date">
-            Reviewed <time datetime={dateModified}>{dateModified}</time>
-          </p>
-        )
-      }
+      {dateModified && <p class="review-date">Updated <time datetime={dateModified}>{dateModified}</time></p>}
       {
         !isApproved && (
           <p class="notice" role="status">
@@ -84,24 +87,7 @@ const structuredData = isApproved
       <slot />
     </div>
 
-    {
-      linkedSources.length > 0 && (
-        <section class="sources" aria-labelledby="official-sources-heading">
-          <h2 id="official-sources-heading">Official sources</h2>
-          <ul>
-            {linkedSources.map((source) => (
-              <li>
-                <a href={source.data.url}>{source.data.title}</a>
-                <span>
-                  {' '}
-                  — {source.data.publisher}; checked{' '}
-                  <time datetime={source.data.lastChecked}>{source.data.lastChecked}</time>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <EditorialReview article={data} />
+    <SourceReferences sources={linkedSources} />
   </article>
 </Base>

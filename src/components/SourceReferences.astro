@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  sources: CollectionEntry<'sources'>[];
+}
+
+const { sources } = Astro.props;
+---
+
+{
+  sources.length > 0 && (
+    <section class="sources" aria-labelledby="official-sources-heading">
+      <h2 id="official-sources-heading">Official sources</h2>
+      <p class="muted">
+        Source links are provided for verification. Their scope may be narrower than this page,
+        so check the stated visa category and application location.
+      </p>
+      <ol class="source-list">
+        {sources.map((source) => (
+          <li id={`source-${source.id}`}>
+            <a href={source.data.url}>{source.data.title}</a>
+            <dl>
+              <div>
+                <dt>Publisher</dt>
+                <dd>{source.data.publisher}</dd>
+              </div>
+              <div>
+                <dt>Verified</dt>
+                <dd>
+                  <time datetime={source.data.lastChecked}>{source.data.lastChecked}</time>
+                </dd>
+              </div>
+              <div>
+                <dt>Review frequency</dt>
+                <dd>{source.data.volatility} volatility</dd>
+              </div>
+              <div>
+                <dt>Verification status</dt>
+                <dd>
+                  {source.data.verificationStatus === 'verified'
+                    ? 'Verified official source'
+                    : 'Needs editorial verification'}
+                </dd>
+              </div>
+            </dl>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}

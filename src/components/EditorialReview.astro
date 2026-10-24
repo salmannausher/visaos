@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'articles'>['data'];
+}
+
+const { article } = Astro.props;
+---
+
+<aside class="editorial-review" aria-labelledby="editorial-review-heading">
+  <h2 id="editorial-review-heading">Editorial review</h2>
+  <dl>
+    <div>
+      <dt>Status</dt>
+      <dd>{article.editorialStatus === 'approved' ? 'Founder-approved for publication' : article.editorialStatus}</dd>
+    </div>
+    {
+      article.sourceCheckedAt && (
+        <div>
+          <dt>Official sources checked</dt>
+          <dd><time datetime={article.sourceCheckedAt}>{article.sourceCheckedAt}</time></dd>
+        </div>
+      )
+    }
+    {
+      article.reviewedAt && article.reviewedBy && (
+        <div>
+          <dt>Accuracy review</dt>
+          <dd>
+            {article.reviewedBy}, <time datetime={article.reviewedAt}>{article.reviewedAt}</time>
+          </dd>
+        </div>
+      )
+    }
+    {
+      article.reviewDueAt && (
+        <div>
+          <dt>Next review due</dt>
+          <dd><time datetime={article.reviewDueAt}>{article.reviewDueAt}</time></dd>
+        </div>
+      )
+    }
+  </dl>
+  <p>
+    VisaOS is independent educational content, not legal advice or a government service. Verify
+    current instructions with the official sources below.
+  </p>
+</aside>

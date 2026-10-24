@@ -1,7 +1,10 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { extname, join, relative, resolve } from 'node:path';
+import { parse } from 'yaml';
+import { isPublishable } from '../src/lib/content-publication.mjs';
 
 const outputDirectory = resolve('dist');
+const articlesDirectory = resolve('src/content/articles');
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -12,6 +15,13 @@ function walk(directory) {
 
 function matches(html, pattern) {
   return [...html.matchAll(pattern)];
+}
+
+function readArticleData(file) {
+  const contents = readFileSync(file, 'utf8');
+  const match = contents.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  if (!match) throw new Error(`${relative(resolve('.'), file)}: missing YAML frontmatter`);
+  return parse(match[1]);
 }
 
 function resolveInternalTarget(urlPath) {
@@ -41,6 +51,19 @@ const errors = [];
 const warnings = [];
 const canonicals = new Map();
 let usesPlaceholderOrigin = false;
+
+for (const file of walk(articlesDirectory).filter((path) => path.endsWith('.md'))) {
+  const data = readArticleData(file);
+  const builtPath = join(outputDirectory, data.path, 'index.html');
+
+  if (isPublishable(data) && !existsSync(builtPath)) {
+    errors.push(`${data.path}: approved indexable article route was not generated`);
+  }
+
+  if (!isPublishable(data) && existsSync(builtPath)) {
+    errors.push(`${data.path}: non-publishable article leaked into the production build`);
+  }
+}
 
 for (const file of htmlFiles) {
   const route = relative(outputDirectory, file);
