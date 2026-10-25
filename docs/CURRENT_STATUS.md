@@ -65,3 +65,13 @@ The following state supersedes the earlier operational claims where they differ.
 - Cloudflare Pages settings remain exactly those in `docs/DEPLOYMENT.md`: production branch `main`, repository root, build command `npm run validate`, output `dist`, Pages v3 and Node `22.22.0` from `.nvmrc`. No adapter, function, binding, environment variable or paid service is required.
 - Google Search Console Domain-property, DNS-verification and sitemap-submission instructions are prepared in `docs/DEPLOYMENT.md`. Verification and submission must wait for the founder-approved custom domain to serve the production build.
 - The production hostname could not be confirmed reachable during this preflight. DNS, HTTPS, redirects, live Pagefind, mobile-layout and live accessibility checks remain `PENDING` until deployment exists and the founder authorizes live release testing.
+
+## Fast-track MVP release update (2026-10-25)
+
+- Release preparation continues from local commit `e90919e`, the recorded head of `codex/sprint-3-research-editorial` and draft PR #6. A live remote refresh was unavailable during this review; `git fetch` and `gh pr view` stalled without returning data, so remote state beyond the local tracking ref is not asserted.
+- The provisional `/us/from/pakistan/` hub was removed from static routing and all public navigation because its local mission source remains `needs-review`. The underlying Pakistan article remains a gated draft and was not approved or published.
+- The production candidate now contains four routes: `/`, `/about/`, `/us/` and `/us/problems/`. Homepage and U.S.-hub wording was revised to describe the limited official-source navigation actually available at launch rather than future content.
+- Department of State visitor-visa, DS-160 overview, DS-160 FAQ and global wait-time pages were opened directly during the review. No fee, appointment estimate, country-specific procedure or outcome claim was added to public pages.
+- GitHub Actions remains unavailable because of the documented account billing lock. The workflow remains intact; local validation evidence and the CI exception must be explicitly reviewed before merge or deployment.
+- Cloudflare Pages configuration remains production branch `main`, repository root, `npm run validate`, output `dist`, Pages v3 and Node `22.22.0`. No adapter, runtime function, binding, secret or paid service is required.
+- No merge, DNS change or deployment has occurred. Live HTTPS, redirects, certificate, Pages hostname, mobile, accessibility and Search Console checks remain pending founder authorization.

@@ -41,13 +41,13 @@ The local Astro build currently emits:
 - `dist/sitemap-index.xml`
 - `dist/sitemap-0.xml`, referenced by the index
 - `dist/robots.txt`
-- five existing static HTML routes and a Pagefind index derived from those HTML files
+- four reviewed static HTML routes and a Pagefind index derived from those HTML files
 
 The built-site validator discovers child sitemap filenames from the generated index rather than assuming `sitemap-0.xml` will remain the only child. It scans the complete production output for placeholder hosts and rejects wrong origins, missing child files, sitemap URLs without matching HTML, HTML routes missing from the sitemap and non-publishable content leaking into HTML, the sitemap or Pagefind.
 
 ## Post-deployment acceptance
 
-Only after founder-approved deployment, complete the live checks in `docs/SPRINT_4A_RELEASE_REVIEW.md`. At minimum verify HTTPS and certificate validity, HTTP-to-HTTPS behavior, the five public routes, canonical and Open Graph URLs, `robots.txt`, every sitemap file discovered from the index, Pagefind assets, mobile reflow, keyboard operation and accessibility tooling results.
+Only after founder-approved deployment, complete the live checks in `docs/SPRINT_4A_RELEASE_REVIEW.md`. At minimum verify HTTPS and certificate validity, HTTP-to-HTTPS behavior, the four public routes, canonical and Open Graph URLs, `robots.txt`, every sitemap file discovered from the index, Pagefind assets, mobile reflow, keyboard operation and accessibility tooling results.
 
 Do not claim the site is live, crawlable or submitted to search engines based on the local build. Record the exact deployment URL, Pages project hostname, deployment commit and test time after they can be observed.
 

@@ -27,8 +27,6 @@ breadcrumbs:
     href: /
   - label: U.S. visas
     href: /us/
-  - label: From Pakistan
-    href: /us/from/pakistan/
 ---
 
 > **Editorial draft — not approved for publication.** The U.S. Mission Pakistan source returned an automated-access error during research and remains marked `needs-review`. A human editor must open and verify the current local instructions before approval.
