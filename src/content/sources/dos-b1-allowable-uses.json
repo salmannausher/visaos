@@ -1,0 +1,16 @@
+{
+  "title": "B-1 Temporary Business Visitor",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/business/b-1-fact-sheet.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-25",
+  "volatility": "medium",
+  "verificationStatus": "verified",
+  "topics": ["B-1", "temporary business", "permitted activities"],
+  "appliesTo": {
+    "visaClassifications": ["B-1", "B-1/B-2"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  }
+}

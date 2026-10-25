@@ -160,6 +160,27 @@ p {
   margin-top: 0;
 }
 
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: white;
+  font-size: 0.95rem;
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-content th {
+  background: #eef5f8;
+  color: #12364b;
+}
+
 .article-header {
   margin-bottom: 2rem;
 }
@@ -336,6 +357,12 @@ p {
   .preview-list dl div {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .article-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
   }
 }
 
