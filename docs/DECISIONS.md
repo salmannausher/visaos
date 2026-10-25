@@ -12,3 +12,4 @@
 10. **Measured growth:** SEO/GEO/AEO plans are hypotheses until Search Console and keyword tools show results; no ranking or traffic guarantees.
 11. **Dependency-free CSS retained:** The initial Tailwind proposal is superseded. Continue the existing global CSS system unless a measured accessibility, maintainability or product requirement demonstrates a need for another system.
 12. **Collection publishing is deny-by-default:** Content entries generate public routes only when founder-approved and explicitly indexable. Draft, pending-review, rejected and non-indexable entries remain absent from the production build, sitemap and Pagefind index.
+13. **Production origin confirmed:** Public metadata and crawl-control files use `https://visaos.devshinx.dev`. Cloudflare Pages and DNS changes remain manual, approval-gated operations.

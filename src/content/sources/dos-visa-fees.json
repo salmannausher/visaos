@@ -1,0 +1,16 @@
+{
+  "title": "Fees for Visa Services",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-25",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["visa fees", "application fee", "issuance fee"],
+  "appliesTo": {
+    "visaClassifications": ["B-1", "B-2", "B-1/B-2"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  }
+}

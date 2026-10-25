@@ -10,20 +10,19 @@ if (!visitorVisa || !ds160Overview || !waitTimes) {
   throw new Error('Required official source metadata is missing for the U.S. visa hub.');
 }
 ---
-<Base title="U.S. Visa Knowledge Hub | VisaOS" description="Find official U.S. visa information sources, visitor visa basics, DS-160 guidance and country-specific resources.">
+<Base title="Official U.S. Visa Information Sources | VisaOS" description="Find verified Department of State starting points for visitor visas, the DS-160 and current visa interview wait-time information.">
   <div class="wrap article">
     <p class="eyebrow">U.S. visa knowledge hub</p>
     <h1>U.S. Visa Information</h1>
     <p class="lead">Start by identifying your travel purpose and the applicable visa category. Always verify requirements and instructions against official U.S. government sources.</p>
-    <div class="notice">Editorial note: This is an initial navigation page. Detailed legal and procedural guidance will be added only after source verification.</div>
+    <div class="notice">VisaOS provides independent navigation, not government services or individualized legal advice. Confirm current requirements on the linked official pages.</div>
     <h2>Official starting points</h2>
     <ul>
       <li><a href={visitorVisa.data.url}>U.S. visitor visa information (Department of State)</a></li>
       <li><a href={ds160Overview.data.url}>DS-160 overview (Department of State)</a></li>
       <li><a href={waitTimes.data.url}>Global visa wait times (Department of State)</a></li>
     </ul>
-    <h2>Explore</h2>
-    <p><a href="/us/from/pakistan/">Guide for applicants applying from Pakistan →</a></p>
+    <h2>Application problems</h2>
     <p><a href="/us/problems/">Common visa problems →</a></p>
   </div>
 </Base>

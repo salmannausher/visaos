@@ -4,13 +4,14 @@ import ArticleLayout from './ArticleLayout.astro';
 
 interface Props {
   entry: CollectionEntry<'articles'>;
+  preview?: boolean;
 }
 
-const { entry } = Astro.props;
+const { entry, preview = false } = Astro.props;
 const { data } = entry;
 ---
 
-<ArticleLayout entry={entry}>
+<ArticleLayout entry={entry} preview={preview}>
   <section class="country-scope" aria-labelledby="country-scope-heading">
     <h2 id="country-scope-heading">Country and application scope</h2>
     <dl>

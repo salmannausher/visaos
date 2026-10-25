@@ -1,0 +1,16 @@
+{
+  "title": "Visa Expiration Date",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-expiration-date.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-25",
+  "volatility": "medium",
+  "verificationStatus": "verified",
+  "topics": ["visa validity", "admission", "period of stay", "Form I-94"],
+  "appliesTo": {
+    "visaClassifications": ["nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  }
+}

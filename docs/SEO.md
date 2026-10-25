@@ -8,6 +8,8 @@ Wave 1: Pakistan, India, Bangladesh, Philippines, starting English content. Wave
 ## Keyword research
 Record query, country, language, intent, topic cluster, estimated volume *with source*, SERP competitors and URLs, differentiation, editorial cost, ranking hypothesis and business relevance. Do not fabricate keyword volumes, rankings or difficulty scores. Early query candidate lists are not measurements.
 
+The Sprint 3 handoff is an early candidate list. Its evidence limits and first-20-page route reconciliation are documented in `docs/SPRINT_3_RESEARCH.md`; the original `UNKNOWN`, `UNVERIFIED`, `NOT AUDITED`, `PENDING` and `TBD` fields remain unresolved.
+
 ## Content architecture
 Universal pillar pages, country-specific procedural pages, question pages, and problem-resolution pages. Avoid duplicate thin pages changing only country name. One page per distinct search intent; supportive internal linking. Lead with direct answer, then applicability/conditions, verified steps, caveats, official source links, related content and useful navigation.
 
