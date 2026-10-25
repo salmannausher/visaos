@@ -8,10 +8,10 @@ Prepared 2026-10-25. This is a release candidate record, not authorization to me
 - Target branch: `main`
 - Release-preparation base commit: `e90919e`
 - Existing draft pull request: `#6`, `codex/sprint-3-research-editorial` into `main`
-- Candidate commit: record the reviewed release commit SHA in the pull request and Cloudflare deployment record before deployment
+- Validated candidate implementation commit: `911f7ce`
 - Production origin: `https://visaos.devshinx.dev`
 
-The candidate commit must descend from `e90919e` and contain the reviewed route exclusion and validation evidence. Do not deploy an uncommitted working tree or infer a SHA from a local build.
+Commit `911f7ce` descends from `e90919e` and contains the reviewed route exclusion and validation evidence. Any later documentation-only commit and the eventual merge commit must be recorded separately. Do not deploy an uncommitted working tree or infer a SHA from a local build.
 
 ## Exact public route set
 
