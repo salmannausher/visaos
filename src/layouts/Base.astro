@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITEMAP_INDEX_PATH } from '../config/site.mjs';
+import { GOOGLE_SITE_VERIFICATION, SITEMAP_INDEX_PATH } from '../config/site.mjs';
 
 interface Props {
   title?: string;
@@ -36,6 +36,7 @@ const structuredDataJson = structuredData
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     {(noindex || privatePreview) && <meta name="robots" content="noindex, nofollow, noarchive" />}
     {!privatePreview && <link rel="canonical" href={canonical} />}

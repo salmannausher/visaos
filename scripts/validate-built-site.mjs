@@ -1,7 +1,11 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, extname, join, relative, resolve, sep } from 'node:path';
 import { parse } from 'yaml';
-import { SITE_ORIGIN, SITEMAP_INDEX_PATH } from '../src/config/site.mjs';
+import {
+  GOOGLE_SITE_VERIFICATION,
+  SITE_ORIGIN,
+  SITEMAP_INDEX_PATH,
+} from '../src/config/site.mjs';
 import { isPublishable } from '../src/lib/content-publication.mjs';
 
 const outputDirectory = resolve('dist');
@@ -97,6 +101,10 @@ for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
   const titles = matches(html, /<title>([^<]+)<\/title>/g);
   const descriptions = matches(html, /<meta\s+name="description"\s+content="([^"]+)"\s*\/?>(?:<\/meta>)?/g);
+  const googleSiteVerifications = matches(
+    html,
+    /<meta\s+name="google-site-verification"\s+content="([^"]+)"\s*\/?>(?:<\/meta>)?/g,
+  );
   const canonicalLinks = matches(html, /<link\s+rel="canonical"\s+href="([^"]+)"\s*\/?>(?:<\/link>)?/g);
   const sitemapLinks = matches(html, /<link\s+rel="sitemap"\s+href="([^"]+)"\s*\/?>(?:<\/link>)?/g);
   const openGraphUrls = matches(html, /<meta\s+property="og:url"\s+content="([^"]+)"\s*\/?>(?:<\/meta>)?/g);
@@ -107,6 +115,12 @@ for (const file of htmlFiles) {
   if (!/<html\s+lang="en"/.test(html)) errors.push(`${route}: missing html[lang="en"]`);
   if (titles.length !== 1) errors.push(`${route}: expected one non-empty title, found ${titles.length}`);
   if (descriptions.length !== 1) errors.push(`${route}: expected one meta description, found ${descriptions.length}`);
+  if (
+    googleSiteVerifications.length !== 1 ||
+    googleSiteVerifications[0][1] !== GOOGLE_SITE_VERIFICATION
+  ) {
+    errors.push(`${route}: missing or incorrect Google site verification tag`);
+  }
   if (canonicalLinks.length !== 1) errors.push(`${route}: expected one canonical URL, found ${canonicalLinks.length}`);
   if (sitemapLinks.length !== 1) errors.push(`${route}: expected one sitemap link, found ${sitemapLinks.length}`);
   if (openGraphUrls.length !== 1) errors.push(`${route}: expected one Open Graph URL, found ${openGraphUrls.length}`);
