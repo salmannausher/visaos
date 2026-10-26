@@ -84,3 +84,13 @@ The following state supersedes the earlier operational claims where they differ.
 - Local clean install, type/content checks, eight tests, production build, full validation and live-registry high-severity audit pass. The candidate emits nine HTML routes, nine sitemap URLs and a Pagefind index using `https://visaos.devshinx.dev`.
 - GitHub Actions remains blocked by the previously documented account billing issue unless a new remote run proves otherwise. This is a recorded release risk; the workflow has not been weakened.
 - Production deployment is authorized. DNS mutation remains a separate infrastructure action; record the actual Pages project hostname and live acceptance results rather than assuming them.
+
+## Production deployment result (2026-10-26)
+
+- Pull request [#8](https://github.com/salmannausher/visaos/pull/8) was squash-merged to `main` as `395c601b2ddaa65a2337c3adbdf944cdb77f7013` after the Cloudflare preview passed.
+- Cloudflare Pages project `visaos-web` deployed that exact commit successfully. The observed project hostname is `https://visaos-web.pages.dev`; it serves canonical metadata for `https://visaos.devshinx.dev`.
+- The production custom domain returns HTTPS 200 for all nine public routes, `robots.txt`, `sitemap-index.xml`, `sitemap-0.xml` and `/pagefind/pagefind.js`. Plain HTTP redirects to the HTTPS origin with 301.
+- All nine live canonical and Open Graph URLs match the production origin. The child sitemap contains the same nine routes and no preview URL.
+- A 390 by 844 responsive check found no page-level horizontal overflow. The comparison table remains horizontally scrollable within its content container, the skip link resolves to the main region, and the browser reported no console errors or warnings.
+- No DNS record was changed during this release. Search Console ownership verification and sitemap submission remain founder/account tasks.
+- GitHub Actions still fails before checkout because of the documented account billing lock. Cloudflare deployment and local validation passed, but remote CI remains an unresolved operational risk.
