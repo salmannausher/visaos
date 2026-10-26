@@ -1,5 +1,15 @@
 # Sprint 4A Production Release Review
 
+## Article publication release — 2026-10-26
+
+The founder subsequently authorized publication of the five substantive articles and production deployment. The earlier four-route MVP decision below remains useful historical evidence but no longer describes the current release candidate.
+
+The release candidate now contains nine routes: the four previously reviewed static pages plus `/us/visitor-visa/`, `/us/ds-160/`, `/us/ds-160/save-and-return/`, `/us/visa-wait-times/` and `/us/from/pakistan/visitor-visa/`. Every article was rechecked against current official sources. The Pakistan Mission source was directly verified in a browser and the country guide was rewritten to use official starting points without copying local fee amounts, wait times or eligibility promises.
+
+Local `npm ci`, `npm run check`, `npm test`, `npm run build`, `npm run validate` and the live-registry `npm audit --audit-level=high` pass. The build emits nine HTML pages and nine production-origin sitemap URLs. Output inspection found no development-preview route, localhost URL, placeholder domain, pending-review marker or unapproved article. The internal model fixture remains a non-routed draft.
+
+GitHub Actions remains an acknowledged account-billing risk until a remote run executes. The workflow is unchanged and the local gates remain mandatory for the deployment commit.
+
 Updated 2026-10-25 for the fast-track MVP release candidate. This review audits the five routes that existed before the release fix and records the four-route production candidate. It does not approve any collection draft or authorize a merge, DNS change or deployment.
 
 ## Release decision

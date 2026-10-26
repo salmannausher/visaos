@@ -7,10 +7,14 @@ eyebrow: DS-160 overview
 summary: A plain-language map of the DS-160's role, official access point and relationship to post-specific instructions.
 intent: Explain what the DS-160 is without turning general information into individualized application advice.
 contentType: pillar
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-10-23"
-reviewDueAt: "2027-01-21"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-10-26"
+reviewedAt: "2026-10-26"
+reviewedBy: "OpenAI Codex — source verification review"
+approvedAt: "2026-10-26"
+reviewDueAt: "2027-01-24"
+updatedAt: "2026-10-26"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -22,8 +26,6 @@ breadcrumbs:
   - label: U.S. visas
     href: /us/
 ---
-
-> **Editorial draft — not approved for publication.** A founder accuracy review is still required.
 
 The DS-160 is the Department of State's online nonimmigrant visa application. The Department says the form is submitted electronically and that consular officers use the information in visa processing. Start with the official [DS-160 overview and access instructions](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application.html).
 

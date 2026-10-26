@@ -1,11 +1,11 @@
 {
-  "title": "U.S. Mission Pakistan Visa Information",
-  "url": "https://pk.usembassy.gov/visas/",
+  "title": "U.S. Mission Pakistan Nonimmigrant Visas",
+  "url": "https://pk.usembassy.gov/nonimmigrant-visas/",
   "publisher": "U.S. Mission Pakistan",
   "sourceType": "us-government",
-  "lastChecked": "2026-10-23",
+  "lastChecked": "2026-10-26",
   "volatility": "high",
-  "verificationStatus": "needs-review",
+  "verificationStatus": "verified",
   "topics": ["Pakistan", "post-specific visa instructions"],
   "appliesTo": {
     "visaClassifications": [],
@@ -14,5 +14,5 @@
     "posts": ["Islamabad", "Karachi"],
     "notes": "Applicability must be confirmed against the instructions on the page and its officially linked providers."
   },
-  "notes": "The official .gov URL returned an automated-access 403 during the 2026-10-23 check. An editor must verify it in a browser before using it to approve substantive guidance."
+  "notes": "Verified in a browser on 2026-10-26. The page links the Mission's NIV Navigator, DS-160 and designated scheduling resources; local instructions remain high-volatility and must be rechecked before the review due date."
 }
