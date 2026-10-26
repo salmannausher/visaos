@@ -7,10 +7,14 @@ eyebrow: Appointment information
 summary: A careful explanation of the Department of State's changing, location-specific visa wait-time data.
 intent: Explain how to interpret official wait-time fields without promising appointment availability.
 contentType: question
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-10-23"
-reviewDueAt: "2026-12-01"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-10-26"
+reviewedAt: "2026-10-26"
+reviewedBy: "OpenAI Codex — source verification review"
+approvedAt: "2026-10-26"
+reviewDueAt: "2026-12-10"
+updatedAt: "2026-10-26"
 applicability:
   visaClassifications: [B-1, B-2, B-1/B-2, F, M, J, H, L, O, P, Q, C, D, C1/D]
 sources:
@@ -21,8 +25,6 @@ breadcrumbs:
   - label: U.S. visas
     href: /us/
 ---
-
-> **Editorial draft — not approved for publication.** Wait-time information is volatile and requires founder review immediately before publication.
 
 The Department of State publishes a [global visa wait-time table](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html) with figures that vary by application location and visa category. The page is updated over time, so use the official table rather than a copied number.
 

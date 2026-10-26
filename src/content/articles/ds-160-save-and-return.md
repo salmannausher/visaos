@@ -7,10 +7,14 @@ eyebrow: DS-160 question
 summary: Officially sourced guidance about saving an unfinished DS-160 and protecting the information needed to retrieve it.
 intent: Answer whether an applicant can save an unfinished DS-160 and return later.
 contentType: question
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-10-23"
-reviewDueAt: "2027-01-21"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-10-26"
+reviewedAt: "2026-10-26"
+reviewedBy: "OpenAI Codex — source verification review"
+approvedAt: "2026-10-26"
+reviewDueAt: "2027-01-24"
+updatedAt: "2026-10-26"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -24,8 +28,6 @@ breadcrumbs:
     href: /us/ds-160/
 ---
 
-> **Editorial draft — not approved for publication.** A founder accuracy review is still required.
-
 Yes. The Department of State's [DS-160 FAQ](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html) says an unfinished application can be saved and retrieved using its application ID and the requested security information.
 
 ## Keep the application ID private and available
@@ -34,7 +36,7 @@ The official FAQ says a new DS-160 receives a unique application ID after the ap
 
 ## Check the current return window
 
-At the source check recorded for this draft, the FAQ described a limited period for returning to a partially completed application stored in the online system and a separate option for saving an application file for later use. Because system behavior and instructions can change, confirm the current period and steps on the official FAQ before acting.
+At the source check recorded for this guide, the FAQ described a limited period for returning to a partially completed application stored in the online system and a separate option for saving an application file for later use. Because system behavior and instructions can change, confirm the current period and steps on the official FAQ before acting.
 
 ## Avoid shared devices
 

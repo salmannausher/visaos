@@ -1,6 +1,22 @@
-# Founder Editorial Review — Five Sprint 2 Drafts
+# Founder Editorial Review — Five Sprint 2 Articles
 
-Prepared 2026-10-24. This is a review brief, not an approval record. All five entries remain `editorialStatus: draft` and `noindex: true`; all founder decisions below remain **PENDING**.
+## Publication decision update — 2026-10-26
+
+The founder explicitly instructed VisaOS to publish the articles and deploy. All five substantive entries were rechecked against their official sources on 2026-10-26, reviewed by `OpenAI Codex — source verification review`, and approved for publication with `noindex: false`. The internal policy fixture remains a draft and is not routed.
+
+| Article | Decision | Next review due |
+| --- | --- | --- |
+| Visitor visa basics | APPROVED | 2026-12-10 |
+| DS-160 overview | APPROVED | 2027-01-24 |
+| Save and return to a DS-160 | APPROVED | 2027-01-24 |
+| Visa wait times | APPROVED | 2026-12-10 |
+| Visitor visa from Pakistan | APPROVED after direct Mission-page verification and a scoped rewrite | 2026-12-10 |
+
+The high-volatility pages must be rechecked by their recorded review dates. Approval does not authorize individualized advice, copied wait-time values, account access, appointment booking or outcome predictions.
+
+## Original pre-approval brief — 2026-10-24
+
+The material below is retained as the pre-approval record. Its `PENDING` decisions and draft-state descriptions were superseded by the publication decision above after the listed blockers were resolved.
 
 ## Review outcome
 

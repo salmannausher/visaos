@@ -7,10 +7,14 @@ eyebrow: Visitor visa guide
 summary: A source-backed guide to the purposes, limits and general application process for U.S. visitor visas.
 intent: Explain the official purpose, limits and general application process for B-1, B-2 and combined B-1/B-2 visitor visas.
 contentType: pillar
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-10-25"
-reviewDueAt: "2026-12-09"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-10-26"
+reviewedAt: "2026-10-26"
+reviewedBy: "OpenAI Codex — source verification review"
+approvedAt: "2026-10-26"
+reviewDueAt: "2026-12-10"
+updatedAt: "2026-10-26"
 applicability:
   visaClassifications: [B-1, B-2, B-1/B-2]
 sources:
@@ -25,8 +29,6 @@ breadcrumbs:
   - label: U.S. visas
     href: /us/
 ---
-
-> **Editorial draft — not approved for publication.** A founder accuracy review is still required.
 
 A **B-1 visa is generally for temporary business activities**, a **B-2 visa is generally for tourism, visits and certain other temporary personal purposes**, and a **combined B-1/B-2 visa may be used for qualifying activities in either category**. None of these classifications authorizes ordinary U.S. employment, degree study or permanent residence. The classification must fit the genuine purpose of each trip, and a visa never guarantees admission at the border.
 

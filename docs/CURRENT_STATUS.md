@@ -75,3 +75,12 @@ The following state supersedes the earlier operational claims where they differ.
 - GitHub Actions remains unavailable because of the documented account billing lock. The workflow remains intact; local validation evidence and the CI exception must be explicitly reviewed before merge or deployment.
 - Cloudflare Pages configuration remains production branch `main`, repository root, `npm run validate`, output `dist`, Pages v3 and Node `22.22.0`. No adapter, runtime function, binding, secret or paid service is required.
 - No merge, DNS change or deployment has occurred. Live HTTPS, redirects, certificate, Pages hostname, mobile, accessibility and Search Console checks remain pending founder authorization.
+
+## Article publication approval (2026-10-26)
+
+- The founder explicitly authorized article publication and production deployment. Work is isolated on `codex/publish-approved-articles`, based on the merged four-route MVP commit `1db8ef0`.
+- All five substantive articles were rechecked against current official sources and approved with visible review metadata. The internal model fixture remains `draft`, `noindex` and non-routed.
+- The U.S. Mission Pakistan nonimmigrant visa page was directly verified in a browser. Its source record is now `verified`, and the Pakistan guide was rewritten as a narrowly scoped official-resource map without copied fees, wait times, waiver promises or individualized advice.
+- Local clean install, type/content checks, eight tests, production build, full validation and live-registry high-severity audit pass. The candidate emits nine HTML routes, nine sitemap URLs and a Pagefind index using `https://visaos.devshinx.dev`.
+- GitHub Actions remains blocked by the previously documented account billing issue unless a new remote run proves otherwise. This is a recorded release risk; the workflow has not been weakened.
+- Production deployment is authorized. DNS mutation remains a separate infrastructure action; record the actual Pages project hostname and live acceptance results rather than assuming them.
