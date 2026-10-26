@@ -51,6 +51,18 @@ After deployment, complete the live checks in `docs/SPRINT_4A_RELEASE_REVIEW.md`
 
 Do not claim the site is live, crawlable or submitted to search engines based on the local build. Record the exact deployment URL, Pages project hostname, deployment commit and test time after they can be observed.
 
+### Production record — 2026-10-26
+
+- Pages project: `visaos-web`
+- Observed Pages hostname: `https://visaos-web.pages.dev`
+- Production origin: `https://visaos.devshinx.dev`
+- Deployed commit: `395c601b2ddaa65a2337c3adbdf944cdb77f7013`
+- Build check: Cloudflare Pages passed
+- Live result: all nine routes, Pagefind asset, robots file and both generated sitemap files returned HTTPS 200; HTTP redirected to HTTPS
+- DNS action in this release: none; the custom domain was already connected
+
+This record does not claim Search Console verification or sitemap submission. GitHub Actions remained blocked before checkout by the account billing issue documented in `docs/CURRENT_STATUS.md`.
+
 ## Google Search Console preparation
 
 Search Console setup happens only after the custom domain serves the approved production build:

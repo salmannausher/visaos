@@ -10,6 +10,12 @@ Local `npm ci`, `npm run check`, `npm test`, `npm run build`, `npm run validate`
 
 GitHub Actions remains an acknowledged account-billing risk until a remote run executes. The workflow is unchanged and the local gates remain mandatory for the deployment commit.
 
+### Live acceptance result
+
+Cloudflare Pages successfully deployed merged commit `395c601b2ddaa65a2337c3adbdf944cdb77f7013` from `main` to project `visaos-web`. The custom domain and observed `visaos-web.pages.dev` hostname both serve the release, with production canonicals on `https://visaos.devshinx.dev`.
+
+All nine public routes, `robots.txt`, `sitemap-index.xml`, `sitemap-0.xml` and the Pagefind JavaScript asset returned HTTPS 200. HTTP redirected to HTTPS with 301. The sitemap listed exactly the nine public routes, live canonical and Open Graph URLs matched the production origin, and a mobile viewport check found no page-level horizontal overflow or browser console errors. DNS was not modified as part of this release.
+
 Updated 2026-10-25 for the fast-track MVP release candidate. This review audits the five routes that existed before the release fix and records the four-route production candidate. It does not approve any collection draft or authorize a merge, DNS change or deployment.
 
 ## Release decision
