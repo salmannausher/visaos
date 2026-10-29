@@ -23,9 +23,9 @@ The `proposed_url` column in the supplied CSV is preserved as research history. 
 | 2 | `/us/visitor-visa/b1-vs-b2/` | same | Planned distinct comparison intent; no content file or public route exists. |
 | 3 | `/us/visitor-visa/documents/` | same | Planned conditional-document intent; avoid turning it into a universal checklist. |
 | 4 | `/us/ds-160/` | `/us/ds-160/` | Existing substantive draft. Retain its route and keep it non-public pending founder review. |
-| 5 | `/us/ds-160/correct-after-submission/` | same | Planned stage-dependent correction intent; no content file or public route exists. |
+| 5 | `/us/ds-160/correct-after-submission/` | same | Sprint 5 founder-review draft now owns submitted-form correction. It remains non-public. |
 | 6 | `/us/ds-160/retrieve-application/` | `/us/ds-160/save-and-return/` | Consolidate into the existing save-and-return draft; do not create a competing retrieval page unless a localized SERP audit proves a distinct intent. |
-| 7 | `/us/ds-160/confirmation-page/` | same | Planned confirmation/barcode troubleshooting intent; keep separate from retrieval only if research confirms distinct user needs. |
+| 7 | `/us/ds-160/confirmation-page/` | same | Sprint 5 founder-review draft now owns reprinting a submitted confirmation page. It remains distinct from unfinished-form retrieval and non-public. |
 | 8 | `/us/appointments/wait-times/` | `/us/visa-wait-times/` | Use the existing wait-times draft route. Do not create the supplied alternative route. |
 | 9 | `/us/problems/fee-not-reflected/` | same | Planned provider-specific problem page under the existing `/us/problems/` navigation hub. |
 | 10 | `/us/problems/delivery-address/` | same | Planned provider-specific problem page under the existing `/us/problems/` navigation hub. |
@@ -37,10 +37,12 @@ The `proposed_url` column in the supplied CSV is preserved as research history. 
 | 16 | `/us/from/bangladesh/` | same | Planned Bangladesh country hub; no route or draft exists. |
 | 17 | `/us/from/philippines/` | same | Planned Philippines country hub; no route or draft exists. |
 | 18 | `/us/visitor-visa/business-conference/` | same | Planned travel-purpose intent; higher scrutiny is required to avoid individualized eligibility advice. |
-| 19 | `/us/problems/221g/` | same | Planned sensitive post-interview topic under the existing problems hub; expert review is recommended. |
-| 20 | `/us/problems/214b/` | same | Planned sensitive refusal topic under the existing problems hub; expert review is recommended. |
+| 19 | `/us/problems/221g/` | same | Sprint 5 founder-review draft prepared; expert legal/editorial review remains required before publication. |
+| 20 | `/us/problems/214b/` | same | Sprint 5 founder-review draft prepared; expert legal/editorial review remains required before publication. |
 
 This mapping gives each supplied page concept one target. Three supplied URLs are superseded by existing draft architecture: ranks 6, 8 and 11. The static `/us/`, `/us/from/pakistan/` and `/us/problems/` pages remain navigation hubs and are not substitutes for approved substantive guidance.
+
+Sprint 5 also adds a founder-review draft at `/us/appointments/expedited-appointment/`. That intent was not one of the supplied first 20 pages. It remains an unmeasured hypothesis and does not change any `UNKNOWN`, `UNVERIFIED`, `NOT AUDITED`, `PENDING` or `TBD` field in the original handoff.
 
 ## Keyword-seed integration
 

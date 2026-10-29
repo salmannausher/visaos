@@ -94,3 +94,12 @@ The following state supersedes the earlier operational claims where they differ.
 - A 390 by 844 responsive check found no page-level horizontal overflow. The comparison table remains horizontally scrollable within its content container, the skip link resolves to the main region, and the browser reported no console errors or warnings.
 - No DNS record was changed during this release. Search Console ownership verification and sitemap submission remain founder/account tasks.
 - GitHub Actions still fails before checkout because of the documented account billing lock. Cloudflare deployment and local validation passed, but remote CI remains an unresolved operational risk.
+
+## Sprint 5 draft expansion (2026-10-29)
+
+- Work is isolated on `codex/sprint-5-evidence-content`, based on verified `main` commit `8ed562a`. No merge, push, publication or deployment is authorized by this work.
+- Five founder-review drafts cover submitted DS-160 corrections, lost confirmation-page recovery, 214(b), 221(g) and expedited appointment requests. Every new entry remains `draft` and `noindex`.
+- The existing save-and-return page retains unfinished-form retrieval intent. The two new DS-160 routes explicitly own post-submission correction and submitted confirmation-page reprinting so the three pages do not compete for the same reader task.
+- Official Department of State sources were directly checked on 2026-10-29. No keyword volume, difficulty, ranking, local provider procedure, appointment availability or processing-time estimate was invented.
+- The temporary paid-expedite pilot is recorded as a high-volatility, selected-location exception through December 31, 2026. It requires a same-day source check and editorial decision before any publication.
+- `docs/SPRINT_5_EDITORIAL_REVIEW.md` records unique reader value, claim-level sources, verification dates, evidence gaps and founder blockers. The 214(b) and 221(g) drafts are recommended for independent legal/editorial review.

@@ -1,0 +1,19 @@
+{
+  "title": "Nonimmigrant Visa Expedited Appointment Pilot Program",
+  "url": "https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-29",
+  "effectiveDate": "2026-08-18",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["paid expedited appointment", "B visa", "pilot program"],
+  "appliesTo": {
+    "visaClassifications": ["B-1", "B-2", "B-1/B-2"],
+    "nationalities": [],
+    "residences": [],
+    "posts": ["participating pilot posts"],
+    "notes": "The official page describes a temporary pilot through December 31, 2026 at selected locations, subject to eligibility and appointment availability."
+  },
+  "notes": "Do not generalize this pilot to non-participating posts or imply that paying for an earlier interview affects visa adjudication or later processing."
+}
