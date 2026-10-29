@@ -59,7 +59,20 @@ A useful request should be truthful, specific and supported by the evidence requ
 
 As verified on October 29, 2026, the Department of State's [expedited appointment pilot page](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) describes an optional program at selected embassies and consulates through **December 31, 2026**.
 
-The page says eligible B-visa applicants with a future regular interview and an unexpired fee receipt may see a **Paid Expedite** option when the location participates and appointments are available. It currently lists a separate **US$750 fee per applicant** and an interview within the next **10 business days**, subject to availability. The fee is described as non-refundable and non-transferable, and the appointment cannot be rescheduled under the pilot rules.
+The official page lists these participating locations and launch dates:
+
+| Participating location | Pilot launch date shown by the Department |
+| --- | --- |
+| Mission Canada — the embassy and all consulates | August 18, 2026 |
+| U.S. Embassy Bogota | August 18, 2026 |
+| U.S. Embassy Guatemala City | August 18, 2026 |
+| U.S. Embassy San Jose | August 18, 2026 |
+| U.S. Embassy Tegucigalpa | August 18, 2026 |
+| Mission Mexico — the embassy and all consulates | July 21, 2026 |
+
+The Department says additional locations may be announced during the pilot. This list is therefore a dated snapshot, not a promise that the option is currently visible at every listed post.
+
+The page says eligible B-visa applicants with a future regular interview and an unexpired fee receipt may see a **Paid Expedite** option when the location participates and appointments are available. It currently lists a separate **US$750 fee for each applicant** and an interview within the next **10 business days**, subject to availability. The fee is described as non-refundable and non-transferable, and the appointment cannot be rescheduled under the pilot rules.
 
 Those amounts, dates, locations and system rules are volatile. The option may not appear outside participating countries or when appointment inventory is unavailable. It applies to an earlier interview only and does not guarantee visa issuance or expedited processing after the interview. This section must be rechecked immediately before any publication decision and removed or rewritten when the pilot changes or ends.
 

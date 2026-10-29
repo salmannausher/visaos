@@ -38,6 +38,14 @@ The controlling source is the Department of State's [DS-160 frequently asked que
 | A consular officer refused the case because the DS-160 was incomplete or contained errors | For forms submitted after April 1, 2010, the FAQ says the embassy or consulate should reopen the form and ask the applicant to correct it. Retrieval details depend on the original submission date. | After correction, the applicant must contact the embassy or consulate for instructions about a new appointment or returning to the post. |
 | The correction changes a material fact or raises a legal eligibility question | Answers must remain accurate and complete. | The official pages do not decide how a particular change affects eligibility. Qualified legal advice may be appropriate. |
 
+The FAQ's documented reopening process is written for a case refused after interview because the submitted DS-160 contained errors or was incomplete. It should not be generalized into a self-service correction method for a mistake noticed before interview.
+
+## Decisions controlled by the embassy or consulate
+
+For a submitted form outside the officer-directed reopening scenario, the reviewed global pages do not decide whether an applicant should create a new DS-160, replace a barcode in an appointment profile, carry more than one confirmation page, reschedule, or return to the post. Those are operational instructions from the embassy or consulate handling the application and, where officially designated, its appointment system.
+
+Check the responsible post's current official instructions before changing the form or appointment. A process published by one post is not evidence of a worldwide rule.
+
 ## If the post has reopened the form
 
 For a DS-160 submitted on or after November 1, 2010, the FAQ directs the applicant to enter the application ID and answer the additional retrieval questions. For a form submitted from April 1 through October 31, 2010, it describes using the barcode or confirmation number in the Application ID field. Forms submitted before April 1, 2010 cannot be reopened under this process; the FAQ says a new DS-160 is required.

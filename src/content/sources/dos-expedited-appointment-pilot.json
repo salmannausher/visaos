@@ -12,7 +12,14 @@
     "visaClassifications": ["B-1", "B-2", "B-1/B-2"],
     "nationalities": [],
     "residences": [],
-    "posts": ["participating pilot posts"],
+    "posts": [
+      "Mission Canada (embassy and all consulates)",
+      "U.S. Embassy Bogota",
+      "U.S. Embassy Guatemala City",
+      "U.S. Embassy San Jose",
+      "U.S. Embassy Tegucigalpa",
+      "Mission Mexico (embassy and all consulates)"
+    ],
     "notes": "The official page describes a temporary pilot through December 31, 2026 at selected locations, subject to eligibility and appointment availability."
   },
   "notes": "Do not generalize this pilot to non-participating posts or imply that paying for an earlier interview affects visa adjudication or later processing."

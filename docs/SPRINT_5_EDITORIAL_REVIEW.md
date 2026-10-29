@@ -90,10 +90,87 @@ The existing `dos-ds160-faq` and `dos-global-wait-times` records were rechecked 
 | The general sequence is DS-160, application fee, first available appointment, then expedite request | `dos-niv-expedite-guidance` | 2026-10-29 | The request interface and evidence requirements vary by location |
 | Posts release regular slots and applicants may be able to move earlier | `dos-global-wait-times` | 2026-10-29 | Availability is not guaranteed and is distinct from an expedite request |
 | A selected-post paid pilot currently runs through December 31, 2026 for eligible B-visa applicants | `dos-expedited-appointment-pilot` | 2026-10-29 | This is temporary and may change or end; mandatory recheck immediately before publication |
+| The listed pilot locations are Mission Canada, Embassy Bogota, Embassy Guatemala City, Embassy San Jose, Embassy Tegucigalpa and Mission Mexico | `dos-expedited-appointment-pilot` | 2026-10-29 | The Department says additional locations may be announced; the list is a dated snapshot |
 | The pilot currently lists US$750 per applicant and an interview within 10 business days, subject to availability | `dos-expedited-appointment-pilot` | 2026-10-29 | Fee, timing, posts and system behavior are highly volatile |
 | An earlier interview does not guarantee visa issuance or expedited post-interview processing | `dos-expedited-appointment-pilot` | 2026-10-29 | Must remain prominent if the pilot section is retained |
 
 **Founder blocker:** do not approve this page without a same-day source recheck. Decide whether the temporary pilot belongs in an evergreen route or should be removed before publication.
+
+## Official-link and claim recheck
+
+Rechecked directly on 2026-10-29:
+
+- the Department's DS-160 FAQ and DS-160 overview loaded successfully;
+- the CEAC DS-160 application endpoint loaded successfully at `https://ceac.state.gov/genniv/`;
+- Visa Denials, Administrative Processing Information and the Department's published ineligibility-law page loaded successfully;
+- the general nonimmigrant expedite guidance, Global Visa Wait Times and the paid-pilot announcement loaded successfully; and
+- no draft relies on a scheduling vendor, blog, forum, search snippet or unofficial contact detail.
+
+The recheck found one precision issue and three evidence boundaries:
+
+1. **Corrected:** the paid pilot source describes a US$750 charge for each applicant and, in its overview, as a fee per appointment. The draft now uses “for each applicant” and retains the group-applicant qualification from the official FAQ.
+2. **Unresolved:** the DS-160 FAQ requires an application ID for the documented confirmation-page reprint route but does not publish a universal lost-ID recovery flow. The draft now makes that stopping point prominent and does not promise that a post can recover the ID.
+3. **Unresolved:** the Department's submitted-DS-160 reopening instructions address an officer-directed correction after refusal. The global pages do not establish one pre-interview replacement, barcode-linking or rescheduling procedure.
+4. **Volatile:** the paid pilot currently lists six participating missions/posts and an end date of December 31, 2026, while warning that additional locations may be announced. All locations, dates, fees and availability require a same-day publication recheck.
+
+No unsupported approval guarantee, appointment guarantee, processing-time promise or universal post procedure was found after the revisions. The 214(b) and 221(g) legal framing remains unapproved pending independent review.
+
+## Page-by-page founder approval checklist
+
+Checking an item records review progress only. It does not authorize a status change or publication.
+
+### Lost DS-160 confirmation page — priority review
+
+- [ ] Confirm the answer-first opening correctly limits self-service reprinting to applicants who have the application ID.
+- [ ] Confirm the missing-ID section is sufficiently prominent and does not imply that a passport number, email address, security answer or consular post provides a universal recovery method.
+- [ ] Reopen the DS-160 FAQ and CEAC on the decision date; confirm the `Option C — Retrieve Application` label and sequence still match.
+- [ ] Confirm that “bring the confirmation page, not the full application” is not presented as a complete post-specific document checklist.
+- [ ] Confirm the route remains distinct from unfinished-form retrieval and submitted-form correction.
+- [ ] Record founder decision and named reviewer: **PENDING**.
+
+### Correcting a submitted DS-160
+
+- [ ] Confirm the stage table distinguishes an unfinished form, a submitted form before interview, an officer-reopened form after refusal and a material change in circumstances.
+- [ ] Confirm the officer-directed reopening process is not presented as a self-service correction method.
+- [ ] Confirm new-form, barcode replacement, appointment-profile, rescheduling and return-to-post decisions remain explicitly post-specific.
+- [ ] Reopen the responsible post's instructions before any localized example is added; no post-specific example is currently claimed.
+- [ ] Confirm the page does not compete with `/us/ds-160/save-and-return/` or the confirmation-page draft.
+- [ ] Record founder decision and named reviewer: **PENDING**.
+
+### Expedited U.S. visa appointment
+
+- [ ] Confirm the page keeps emergency expedite, an ordinary earlier regular slot and the paid pilot as three different paths.
+- [ ] Same-day recheck the general expedite prerequisites and the responsible post's official request instructions.
+- [ ] Same-day recheck the paid pilot's six listed participating missions/posts, eligibility, fee, appointment window, availability limits and December 31, 2026 end date.
+- [ ] Decide whether temporary pilot content belongs in this evergreen route; remove or rewrite it when expired.
+- [ ] Confirm no wording promises an appointment, visa issuance, post-interview processing time or passport return date.
+- [ ] Record founder decision and named reviewer: **PENDING**.
+
+### 214(b) refusal — independent review hold
+
+- [ ] Obtain independent U.S. immigration-law/editorial review of category exceptions, immigrant-intent language and the 214(b)/221(g) comparison.
+- [ ] Confirm ties are examples rather than a checklist and that no reapplication timing or success probability is implied.
+- [ ] Confirm the page accurately states that the specific case is closed and there is no appeal process.
+- [ ] Record the qualified reviewer's name and decision: **PENDING — PUBLICATION BLOCKED**.
+
+### 221(g) refusal — independent review hold
+
+- [ ] Obtain independent U.S. immigration-law/editorial review of continuing refused status, reconsideration and the 214(b)/221(g) comparison.
+- [ ] Confirm the one-year period is limited to submitting requested information and is not framed as a processing deadline.
+- [ ] Confirm case-specific refusal instructions control and no curability or completion-time promise is implied.
+- [ ] Record the qualified reviewer's name and decision: **PENDING — PUBLICATION BLOCKED**.
+
+## Internal-link and overlap review
+
+| Draft | Existing published contextual link | Overlap finding |
+| --- | --- | --- |
+| Submitted DS-160 correction | `/us/ds-160/save-and-return/`, `/us/ds-160/` | Separate application stage and intent; no duplicate public route |
+| Lost confirmation page | `/us/ds-160/save-and-return/` | Submitted-document recovery is distinct; the correction draft is named but intentionally not linked while unpublished |
+| 214(b) | `/us/visitor-visa/` | Refusal explanation is distinct from the B-visa overview |
+| 221(g) | `/us/visa-wait-times/` | The draft explicitly says appointment wait data cannot predict administrative processing |
+| Expedited appointment | `/us/visa-wait-times/` | Request procedure is distinct from interpreting published wait-time data |
+
+No published navigation links to these draft routes exist. Draft-to-draft links are intentionally omitted so one page can be approved independently without creating a broken public link or exposing another draft.
 
 ## Cross-page editorial gates
 

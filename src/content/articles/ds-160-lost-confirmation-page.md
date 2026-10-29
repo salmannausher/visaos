@@ -25,7 +25,7 @@ breadcrumbs:
     href: /us/ds-160/
 ---
 
-**Yes. If the DS-160 was submitted and you have the application ID, the Department of State says you can retrieve the application in the Consular Electronic Application Center (CEAC) and print the confirmation page again.** This does not change the submitted answers and does not require printing the full application.
+**Yes. If the DS-160 was submitted and you have the application ID, the Department of State says you can retrieve the application in the Consular Electronic Application Center (CEAC) and print the confirmation page again.** This does not change the submitted answers and does not require printing the full application. **If the application ID is also missing, the Department's global FAQ does not provide a universal self-service recovery procedure.**
 
 Use the official [DS-160 FAQ confirmation-page instructions](https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html) and open CEAC only through an official `.gov` link.
 
@@ -40,6 +40,12 @@ The Department of State describes this sequence:
 5. View and print the submitted confirmation page.
 
 The confirmation page contains the application ID and barcode that allow the post to retrieve the submitted DS-160. The Department says applicants must bring the confirmation page during the application process; the entire application is not required for the interview.
+
+## If the application ID is missing
+
+The official reprint sequence stops at the application-ID requirement. The reviewed Department guidance does not say that CEAC can find a submitted application from a passport number, email address or security answer alone, and it does not publish one global lost-ID reset process.
+
+Use the official instructions or contact channel for the embassy or consulate handling the application and explain only that the confirmation page and application ID are unavailable. The post controls any case-specific next step. This draft does not claim that the post can always recover the ID, that the applicant must submit a replacement DS-160, or that an appointment record can be changed in the same way at every location.
 
 ## Do not confuse three different tasks
 
@@ -59,7 +65,7 @@ Use CEAC's retrieval option and reprint the confirmation page. Do not start a ne
 
 ### You lost both the confirmation page and the application ID
 
-The Department's confirmation-page answer requires the application ID. The reviewed global FAQ does not give a complete universal recovery process for a person who no longer has it. Use the official instructions or contact channel of the embassy or consulate handling the application. Do not send passport details, security answers or account screenshots to VisaOS.
+The Department's confirmation-page answer requires the application ID, so its documented CEAC reprint steps cannot be completed as written. Follow the missing-ID boundary above and do not send passport details, security answers or account screenshots to VisaOS.
 
 ### Your interview is at a different post from the one selected on the form
 
