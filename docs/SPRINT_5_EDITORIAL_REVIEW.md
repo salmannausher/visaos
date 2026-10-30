@@ -30,7 +30,7 @@ Prepared 2026-10-29. This is a research and review package, not a publication ap
 | `dos-niv-expedite-guidance` | [Helpful Hints: Nonimmigrant Visa Processing](https://travel.state.gov/content/travel/en/us-visas/immigrate/the-immigrant-visa-process/step-1-submit-a-petition/step-2-begin-nvc-processing/helpful-hints-niv-processing.html) | High | 2026-10-29 | General emergency-request prerequisites and post-specific control |
 | `dos-expedited-appointment-pilot` | [Nonimmigrant Visa Expedited Appointment Pilot Program](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) | High | 2026-10-29 | Temporary paid pilot, selected posts, B-visa scope and limitations |
 
-The existing `dos-ds160-faq` and `dos-global-wait-times` records were rechecked on 2026-10-29. No provider-specific source was added.
+The existing `dos-ds160-faq` and `dos-ds160-overview` records were rechecked again on 2026-10-30 for controlled publication preparation. `dos-global-wait-times` was rechecked on 2026-10-29. No provider-specific source was added.
 
 ## Claim-to-source review matrix
 
@@ -50,11 +50,11 @@ The existing `dos-ds160-faq` and `dos-global-wait-times` records were rechecked 
 
 | Claim | Source | Verified | Unresolved issue or editorial condition |
 | --- | --- | --- | --- |
-| A submitted confirmation page can be reprinted | `dos-ds160-faq` | 2026-10-29 | None for an applicant who has the application ID |
-| CEAC Option C, the selected post and the application ID are part of the reprint sequence | `dos-ds160-faq` | 2026-10-29 | CEAC interface labels are operational and should be rechecked before publication |
-| The confirmation page, not the full application, is required for the interview | `dos-ds160-faq` | 2026-10-29 | Post-specific instructions may add other required items |
-| An actual post should be able to retrieve a form using its confirmation-page barcode even if a different post was initially selected | `dos-ds160-faq` | 2026-10-29 | Appointment-profile changes remain post-specific |
-| The reviewed FAQ requires an application ID for the described recovery route | `dos-ds160-faq` | 2026-10-29 | No complete global lost-ID recovery procedure was found; the draft directs the reader to the responsible post |
+| A submitted confirmation page can be reprinted | `dos-ds160-faq` | 2026-10-30 | None for an applicant who has the application ID |
+| The FAQ's “Option C — Retrieve Application,” the selected post and the application ID are part of the reprint sequence | `dos-ds160-faq` | 2026-10-30 | The current CEAC landing page displays “RETRIEVE AN APPLICATION”; operational labels and layout may change |
+| The confirmation page, not the full application, is required for the interview | `dos-ds160-faq` | 2026-10-30 | Post-specific instructions may add other required items |
+| An actual post should be able to retrieve a form using its confirmation-page barcode even if a different post was initially selected | `dos-ds160-faq` | 2026-10-30 | Appointment-profile changes remain post-specific |
+| The reviewed FAQ requires an application ID for the described recovery route | `dos-ds160-faq` | 2026-10-30 | No complete global lost-ID recovery procedure was found; the draft directs the reader to the responsible post |
 
 **Founder blocker:** decide whether the lost-application-ID gap is prominent enough and confirm that this distinct submitted-document intent merits a standalone route without measured SERP evidence.
 
@@ -101,10 +101,12 @@ The existing `dos-ds160-faq` and `dos-global-wait-times` records were rechecked 
 Rechecked directly on 2026-10-29:
 
 - the Department's DS-160 FAQ and DS-160 overview loaded successfully;
-- the CEAC DS-160 application endpoint loaded successfully at `https://ceac.state.gov/genniv/`;
+- the CEAC DS-160 application endpoint loaded successfully at `https://ceac.state.gov/genniv/`; its current landing page displayed `RETRIEVE AN APPLICATION` and stated that the application ID is needed to access an application;
 - Visa Denials, Administrative Processing Information and the Department's published ineligibility-law page loaded successfully;
 - the general nonimmigrant expedite guidance, Global Visa Wait Times and the paid-pilot announcement loaded successfully; and
 - no draft relies on a scheduling vendor, blog, forum, search snippet or unofficial contact detail.
+
+Controlled publication recheck on 2026-10-30 confirmed that the DS-160 FAQ, DS-160 overview and CEAC endpoint still loaded. The FAQ still used `Option C — Retrieve Application`; the live CEAC landing page displayed `RETRIEVE AN APPLICATION` and stated that an application ID is needed to retrieve the application. No universal missing-ID recovery procedure was published in the reviewed global guidance.
 
 The recheck found one precision issue and three evidence boundaries:
 
@@ -123,7 +125,8 @@ Checking an item records review progress only. It does not authorize a status ch
 
 - [ ] Confirm the answer-first opening correctly limits self-service reprinting to applicants who have the application ID.
 - [ ] Confirm the missing-ID section is sufficiently prominent and does not imply that a passport number, email address, security answer or consular post provides a universal recovery method.
-- [ ] Reopen the DS-160 FAQ and CEAC on the decision date; confirm the `Option C — Retrieve Application` label and sequence still match.
+- [x] Controlled publication recheck on 2026-10-30: the FAQ used `Option C — Retrieve Application`; the live CEAC landing page displayed `RETRIEVE AN APPLICATION` and required an application ID.
+- [ ] Reopen the DS-160 FAQ and CEAC on the founder-decision date; record any interface change without treating a button label as permanent.
 - [ ] Confirm that “bring the confirmation page, not the full application” is not presented as a complete post-specific document checklist.
 - [ ] Confirm the route remains distinct from unfinished-form retrieval and submitted-form correction.
 - [ ] Record founder decision and named reviewer: **PENDING**.

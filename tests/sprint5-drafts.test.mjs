@@ -26,7 +26,10 @@ test('Sprint 5 articles remain founder-review drafts and cannot publish', () => 
   for (const { data, file } of drafts) {
     assert.equal(data.editorialStatus, 'draft', `${file} must remain draft`);
     assert.equal(data.noindex, true, `${file} must remain noindex`);
-    assert.equal(data.sourceCheckedAt, '2026-10-29');
+    const expectedSourceCheck = data.path.endsWith('confirmation-page')
+      ? '2026-10-30'
+      : '2026-10-29';
+    assert.equal(data.sourceCheckedAt, expectedSourceCheck);
     assert.equal(data.approvedAt, undefined);
     assert.equal(data.reviewedAt, undefined);
     assert.equal(data.reviewedBy, undefined);
@@ -77,6 +80,9 @@ test('founder-priority drafts preserve documented evidence boundaries', () => {
   assert.match(correction.body, /process published by one post is not evidence of a worldwide rule/i);
   assert.match(confirmation.body, /does not provide a universal self-service recovery procedure/i);
   assert.match(confirmation.body, /does not claim that the post can always recover the ID/i);
+  assert.match(confirmation.body, /Option C — Retrieve Application/);
+  assert.match(confirmation.body, /RETRIEVE AN APPLICATION/);
+  assert.match(confirmation.body, /button names and page layout may change/i);
   assert.match(expedite.body, /Emergency expedite request/);
   assert.match(expedite.body, /Earlier regular slot/);
   assert.match(expedite.body, /Temporary paid-expedite pilot/);

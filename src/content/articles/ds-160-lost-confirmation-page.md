@@ -9,7 +9,7 @@ intent: Explain how to reprint a lost confirmation page for a submitted DS-160 w
 contentType: problem
 editorialStatus: draft
 noindex: true
-sourceCheckedAt: "2026-10-29"
+sourceCheckedAt: "2026-10-30"
 reviewDueAt: "2027-01-27"
 applicability:
   visaClassifications: [nonimmigrant]
@@ -35,9 +35,11 @@ The Department of State describes this sequence:
 
 1. Open the official [Consular Electronic Application Center](https://ceac.state.gov/genniv/).
 2. Select the U.S. embassy or consulate where you are applying.
-3. Choose **Option C — Retrieve Application** on the Getting Started page.
+3. Choose the application-retrieval control. The Department FAQ calls it **Option C — Retrieve Application**; during the October 30, 2026 recheck, the CEAC landing page displayed **RETRIEVE AN APPLICATION**.
 4. Enter the DS-160 application ID and complete the requested retrieval steps.
 5. View and print the submitted confirmation page.
+
+CEAC is an operational system, so button names and page layout may change. Use the current retrieval control on the official `.gov` page rather than treating the wording in this guide as a permanent interface label.
 
 The confirmation page contains the application ID and barcode that allow the post to retrieve the submitted DS-160. The Department says applicants must bring the confirmation page during the application process; the entire application is not required for the interview.
 
