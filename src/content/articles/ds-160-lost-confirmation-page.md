@@ -7,10 +7,13 @@ eyebrow: DS-160 problem
 summary: A focused recovery guide for the confirmation page of an already submitted DS-160.
 intent: Explain how to reprint a lost confirmation page for a submitted DS-160 without competing with unfinished-form retrieval guidance.
 contentType: problem
-editorialStatus: draft
-noindex: true
+editorialStatus: approved
+noindex: false
 sourceCheckedAt: "2026-10-30"
-reviewDueAt: "2027-01-27"
+reviewedAt: "2026-10-30"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-10-30"
+reviewDueAt: "2027-01-28"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:

@@ -20,19 +20,31 @@ function readArticle(file) {
 
 const drafts = sprint5Files.map(readArticle);
 
-test('Sprint 5 articles remain founder-review drafts and cannot publish', () => {
+test('only the founder-approved Sprint 5 confirmation-page article can publish', () => {
   assert.equal(drafts.length, 5);
 
   for (const { data, file } of drafts) {
-    assert.equal(data.editorialStatus, 'draft', `${file} must remain draft`);
-    assert.equal(data.noindex, true, `${file} must remain noindex`);
+    const isApprovedConfirmationPage = data.path.endsWith('confirmation-page');
     const expectedSourceCheck = data.path.endsWith('confirmation-page')
       ? '2026-10-30'
       : '2026-10-29';
+
+    if (isApprovedConfirmationPage) {
+      assert.equal(data.editorialStatus, 'approved');
+      assert.equal(data.noindex, false);
+      assert.equal(data.reviewedBy, 'Salman Nausher');
+      assert.equal(data.reviewedAt, '2026-10-30');
+      assert.equal(data.approvedAt, '2026-10-30');
+      assert.equal(data.reviewDueAt, '2027-01-28');
+    } else {
+      assert.equal(data.editorialStatus, 'draft', `${file} must remain draft`);
+      assert.equal(data.noindex, true, `${file} must remain noindex`);
+      assert.equal(data.approvedAt, undefined);
+      assert.equal(data.reviewedAt, undefined);
+      assert.equal(data.reviewedBy, undefined);
+    }
+
     assert.equal(data.sourceCheckedAt, expectedSourceCheck);
-    assert.equal(data.approvedAt, undefined);
-    assert.equal(data.reviewedAt, undefined);
-    assert.equal(data.reviewedBy, undefined);
     assert(Array.isArray(data.sources) && data.sources.length > 0, `${file} needs sources`);
   }
 });
