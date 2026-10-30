@@ -1,0 +1,17 @@
+{
+  "title": "Visa Denials",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-29",
+  "volatility": "medium",
+  "verificationStatus": "verified",
+  "topics": ["visa refusals", "INA 214(b)", "INA 221(g)", "reapplication"],
+  "appliesTo": {
+    "visaClassifications": ["immigrant", "nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": [],
+    "notes": "The page distinguishes 214(b) from 221(g), explains reapplication, and directs applicants to post-specific procedures."
+  }
+}

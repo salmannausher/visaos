@@ -1,0 +1,17 @@
+{
+  "title": "Ineligibilities and Waivers: Laws",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/waivers.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-29",
+  "volatility": "medium",
+  "verificationStatus": "verified",
+  "topics": ["Immigration and Nationality Act", "INA 214(b)", "INA 221(g)"],
+  "appliesTo": {
+    "visaClassifications": ["immigrant", "nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": [],
+    "notes": "Use with the Department of State's plain-language Visa Denials page; it does not replace case-specific legal advice."
+  }
+}

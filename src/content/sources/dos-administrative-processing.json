@@ -1,0 +1,17 @@
+{
+  "title": "Administrative Processing Information",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-29",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["INA 221(g)", "administrative processing", "additional documents"],
+  "appliesTo": {
+    "visaClassifications": ["immigrant", "nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": [],
+    "notes": "Administrative processing is case-specific; the source does not provide a guaranteed completion date."
+  }
+}

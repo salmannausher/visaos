@@ -1,0 +1,17 @@
+{
+  "title": "Helpful Hints: Nonimmigrant Visa Processing",
+  "url": "https://travel.state.gov/content/travel/en/us-visas/immigrate/the-immigrant-visa-process/step-1-submit-a-petition/step-2-begin-nvc-processing/helpful-hints-niv-processing.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-10-29",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["expedited interview", "urgent travel", "nonimmigrant visa appointment"],
+  "appliesTo": {
+    "visaClassifications": ["nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": [],
+    "notes": "The Department states that the request process varies by location and that the relevant embassy, consulate, or scheduling site controls local instructions."
+  }
+}
