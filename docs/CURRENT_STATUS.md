@@ -1,5 +1,12 @@
 # VisaOS Current Status (context captured 2026-10-23)
 
+## Sprint 5 four-article publication gate — 2026-11-01
+
+- PR #15 was squash-merged into `main` at `ec4fb433508a2aa05eddb84944328073e0626ace` as research/editorial integration only. The four remaining Sprint 5 articles remain `draft` and `noindex`.
+- Salman Nausher's founder editorial approval for all four final drafts is recorded in `docs/SPRINT_5_EDITORIAL_REVIEW.md`.
+- The existing page-specific independent-review hold for the 214(b) and 221(g) articles is not satisfied by AI-assisted review or founder approval alone. `docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md` records the narrow release-specific exception available for explicit founder authorization without claiming attorney review.
+- Production remains at 10 public HTML pages. No four-article publication PR or deployment has occurred.
+
 - GitHub repository: https://github.com/salmannausher/visaos (public at last check).
 - User reported running starter Git commands successfully on `feature/initial-foundation`, but GitHub connector subsequently returned an empty-repository/branch-not-found view. **Verify branch and files before assuming the push is visible.**
 - A starter Astro ZIP and a Week 1 research ZIP were supplied previously in the chat. Do not assume their bytes are present in the repo until inspected.
