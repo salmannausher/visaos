@@ -234,3 +234,9 @@ The cited Department of State pages were opened directly on November 1, 2026. Th
 - [ ] Obtain Salman Nausher's explicit approval of the resulting final revision.
 
 Until these boxes are completed, no publication branch or publication PR should change any of the four entries to `approved` or `noindex: false`.
+
+## Founder publication decision — 2026-11-01
+
+Salman Nausher confirmed that he reviewed the final versions of the four remaining Sprint 5 articles and wants them published together. This records valid founder editorial approval for the DS-160 correction, 214(b), 221(g) and expedited-appointment articles.
+
+The approval is not an attorney review and does not by itself satisfy the separate independent-human-review hold documented above for 214(b) and 221(g). The exact release-specific policy decision that can resolve that conflict without inventing credentials is recorded in `docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md`. All four articles remain `draft` and `noindex` until that decision is explicitly authorized or genuine independent review evidence is supplied.
