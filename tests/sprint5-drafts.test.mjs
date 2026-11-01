@@ -27,7 +27,7 @@ test('only the founder-approved Sprint 5 confirmation-page article can publish',
     const isApprovedConfirmationPage = data.path.endsWith('confirmation-page');
     const expectedSourceCheck = data.path.endsWith('confirmation-page')
       ? '2026-10-30'
-      : '2026-10-29';
+      : '2026-11-01';
 
     if (isApprovedConfirmationPage) {
       assert.equal(data.editorialStatus, 'approved');
@@ -99,6 +99,8 @@ test('founder-priority drafts preserve documented evidence boundaries', () => {
   assert.match(expedite.body, /Earlier regular slot/);
   assert.match(expedite.body, /Temporary paid-expedite pilot/);
   assert.match(expedite.body, /December 31, 2026/);
+  assert.match(expedite.body, /verified on November 1, 2026/i);
+  assert.match(expedite.body, /Do not send a passport image, DS-160 confirmation/);
 
   for (const post of [
     'Mission Canada',
@@ -124,4 +126,5 @@ test('214(b) and 221(g) remain blocked for independent legal and editorial revie
   assert.match(review, /214\(b\) refusal — independent review hold/);
   assert.match(review, /221\(g\) refusal — independent review hold/);
   assert.match(review, /PENDING — PUBLICATION BLOCKED/g);
+  assert.match(review, /AI-assisted evidence review/i);
 });

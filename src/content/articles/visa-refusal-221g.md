@@ -9,8 +9,8 @@ intent: Explain a refusal under INA 221(g) and the applicant's bounded next step
 contentType: problem
 editorialStatus: draft
 noindex: true
-sourceCheckedAt: "2026-10-29"
-reviewDueAt: "2026-12-13"
+sourceCheckedAt: "2026-11-01"
+reviewDueAt: "2026-12-16"
 applicability:
   visaClassifications: [immigrant, nonimmigrant]
 sources:
