@@ -7,10 +7,13 @@ eyebrow: DS-160 problem
 summary: A focused recovery guide for the confirmation page of an already submitted DS-160.
 intent: Explain how to reprint a lost confirmation page for a submitted DS-160 without competing with unfinished-form retrieval guidance.
 contentType: problem
-editorialStatus: draft
-noindex: true
+editorialStatus: approved
+noindex: false
 sourceCheckedAt: "2026-10-30"
-reviewDueAt: "2027-01-27"
+reviewedAt: "2026-10-30"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-10-30"
+reviewDueAt: "2027-01-28"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -47,7 +50,7 @@ The confirmation page contains the application ID and barcode that allow the pos
 
 The official reprint sequence stops at the application-ID requirement. The reviewed Department guidance does not say that CEAC can find a submitted application from a passport number, email address or security answer alone, and it does not publish one global lost-ID reset process.
 
-Use the official instructions or contact channel for the embassy or consulate handling the application and explain only that the confirmation page and application ID are unavailable. The post controls any case-specific next step. This draft does not claim that the post can always recover the ID, that the applicant must submit a replacement DS-160, or that an appointment record can be changed in the same way at every location.
+Use the official instructions or contact channel for the embassy or consulate handling the application and explain only that the confirmation page and application ID are unavailable. The post controls any case-specific next step. This guide does not claim that the post can always recover the ID, that the applicant must submit a replacement DS-160, or that an appointment record can be changed in the same way at every location.
 
 ## Do not confuse three different tasks
 
@@ -55,7 +58,7 @@ Use the official instructions or contact channel for the embassy or consulate ha
 | --- | --- | --- |
 | The form is unfinished and the applicant wants to continue completing it | Retrieve a partially completed application and edit saved pages | [Saving a DS-160 and returning later](/us/ds-160/save-and-return/) |
 | The form was submitted and the confirmation page was lost | Retrieve the submitted application to view and reprint its confirmation page | This page |
-| The form was submitted but an answer is wrong | Determine the post-controlled correction procedure; reprinting alone does not correct an answer | Founder-review draft: correcting a submitted DS-160 |
+| The form was submitted but an answer is wrong | Determine the post-controlled correction procedure; reprinting alone does not correct an answer | Follow the current correction instructions from the U.S. embassy or consulate handling the application |
 
 This separation prevents the phrase “retrieve a DS-160” from creating three competing pages that give different answers without explaining the application state.
 
