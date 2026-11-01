@@ -197,3 +197,40 @@ Before any of the five drafts is approved:
 | 214(b) refusal | LEGAL/EDITORIAL REVIEW | PENDING | PENDING | Exception wording and individualized legal risk |
 | 221(g) refusal | LEGAL/EDITORIAL REVIEW | PENDING | PENDING | Case-specific instructions and no timing certainty |
 | Expedited appointment | HOLD FOR SAME-DAY RECHECK | PENDING | PENDING | Temporary pilot and location-specific procedures |
+
+## Final four-article AI-assisted evidence review — 2026-11-01
+
+This pass was an **AI-assisted evidence review**, not a human legal opinion, independent attorney review or founder approval. No reviewer or approval metadata was added to the four articles, and all four remain `draft` and `noindex`.
+
+The cited Department of State pages were opened directly on November 1, 2026. The source registry dates were updated only for pages actually rechecked: the DS-160 FAQ and overview; Visa Denials; Administrative Processing Information; Ineligibilities and Waivers: Laws; the general nonimmigrant expedite guidance; the expedited-appointment pilot announcement; and Global Visa Wait Times.
+
+| Article | Evidence verdict | Correction or confirmation from this pass | Remaining publication gate |
+| --- | --- | --- | --- |
+| Correcting a submitted DS-160 | Ready for founder final review | Confirmed that the globally documented reopening workflow is the officer-directed correction scenario after a refusal for errors or incompleteness. Replaced public-facing “This draft” language with “This guide.” | Salman Nausher must review and explicitly approve the final text; post-specific pre-interview procedures remain intentionally unresolved. |
+| 214(b) refusal | Hold | Clarified that H-1B and L are examples named on the plain-language denial page, while the published statutory text contains additional classification-specific exceptions. The page does not claim to provide a complete exception analysis. | A named, qualified independent U.S. immigration-law/editorial reviewer must review the exception language and 214(b)/221(g) comparison, followed by founder approval. |
+| 221(g) refusal | Hold | Reconfirmed the continuing refused status, possible reconsideration, two common paths and the distinction between the one-year response period and administrative-processing duration. | A named, qualified independent U.S. immigration-law/editorial reviewer must review the legal framing and comparison, followed by founder approval. |
+| Expedited appointment | Ready for founder final review, subject to publication-day recheck | Reconfirmed the three distinct paths. The paid pilot still lists six missions/posts, eligible B-visa applicants, US$750 per applicant, an interview within 10 business days subject to availability, a nonrefundable/nontransferable fee and a December 31, 2026 end date. Added a privacy warning against sending identity, application, payment or account data to VisaOS or unofficial sellers. | Salman Nausher must review and explicitly approve the final text; every high-volatility pilot term and responsible-post procedure must be checked again on the publication date. |
+
+### Final founder approval checklist
+
+#### Correcting a submitted DS-160
+
+- [ ] Confirm the final opening does not imply that a submitted form can normally be reopened by the applicant.
+- [ ] Confirm new-form, barcode, appointment-profile and rescheduling decisions remain post-specific.
+- [ ] Confirm the page remains distinct from unfinished-form retrieval and confirmation-page reprinting.
+- [ ] Record Salman Nausher's explicit decision and actual review date only after he reviews this final revision.
+
+#### Expedited appointment
+
+- [ ] Confirm emergency expedite, ordinary earlier-slot rescheduling and the temporary paid pilot remain distinct.
+- [ ] On the publication date, reopen both the general expedite guidance and paid-pilot announcement and verify location, eligibility, fee, timing, inventory and end-date claims.
+- [ ] Confirm the page promises neither appointment availability, visa issuance nor faster post-interview processing.
+- [ ] Record Salman Nausher's explicit decision and actual review date only after he reviews this final revision.
+
+#### 214(b) and 221(g)
+
+- [ ] Record the real name, qualification, decision and actual review date of an independent U.S. immigration-law/editorial reviewer for each page.
+- [ ] Resolve every exception, continuing-status and cross-page comparison comment from that review.
+- [ ] Obtain Salman Nausher's explicit approval of the resulting final revision.
+
+Until these boxes are completed, no publication branch or publication PR should change any of the four entries to `approved` or `noindex: false`.

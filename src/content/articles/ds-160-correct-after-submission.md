@@ -9,8 +9,8 @@ intent: Explain how correction of a submitted DS-160 differs from editing or ret
 contentType: problem
 editorialStatus: draft
 noindex: true
-sourceCheckedAt: "2026-10-29"
-reviewDueAt: "2026-12-13"
+sourceCheckedAt: "2026-11-01"
+reviewDueAt: "2026-12-16"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -68,4 +68,4 @@ A changed job, passport, trip purpose or other fact is not merely a spelling cor
 
 ## What this page does not claim
 
-This draft does not claim that every submitted DS-160 can be edited, that a new barcode will automatically attach to an existing appointment, or that correcting a form avoids refusal. It also does not replace the broader explanation of [what the DS-160 is](/us/ds-160/). The unique purpose of this page is the post-submission correction decision, not saving, retrieving or reprinting an unfinished form.
+This guide does not claim that every submitted DS-160 can be edited, that a new barcode will automatically attach to an existing appointment, or that correcting a form avoids refusal. It also does not replace the broader explanation of [what the DS-160 is](/us/ds-160/). The unique purpose of this page is the post-submission correction decision, not saving, retrieving or reprinting an unfinished form.

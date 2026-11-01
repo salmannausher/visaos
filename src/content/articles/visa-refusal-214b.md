@@ -9,8 +9,8 @@ intent: Explain a refusal under INA 214(b) without promising that documents, str
 contentType: problem
 editorialStatus: draft
 noindex: true
-sourceCheckedAt: "2026-10-29"
-reviewDueAt: "2027-01-27"
+sourceCheckedAt: "2026-11-01"
+reviewDueAt: "2027-01-30"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -36,7 +36,7 @@ The Department's [Visa Denials guidance](https://travel.state.gov/content/travel
 | The applicant did not sufficiently demonstrate qualification for the requested nonimmigrant visa category | The stated purpose and facts did not establish eligibility for that category to the officer's satisfaction. | It does not identify one document that will automatically fix a later application. |
 | The applicant did not overcome the applicable presumption of immigrant intent | The applicant did not sufficiently demonstrate circumstances and ties supporting departure after the temporary stay. | It does not mean that property, employment, family relationships or a bank balance guarantees approval. |
 
-Section 214(b) applies to nonimmigrant visas, but the exact immigrant-intent rule has statutory category exceptions. The Department's page specifically notes exceptions for H-1B and L applicants and certain accompanying family members. A reader should not apply visitor-visa “strong ties” wording mechanically to every nonimmigrant category.
+Section 214(b) applies to nonimmigrant visas, but the exact immigrant-intent rule has classification-specific statutory exceptions. The Department's plain-language denial page names H-1B and L applicants and certain accompanying family members as examples; the published statutory text contains additional category-specific exceptions. This guide does not provide a complete exception analysis, and a reader should not apply visitor-visa “strong ties” wording mechanically to every nonimmigrant category.
 
 ## “Strong ties” are not a universal checklist
 

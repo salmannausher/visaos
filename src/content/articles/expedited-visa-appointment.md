@@ -9,8 +9,8 @@ intent: Explain eligibility boundaries and the general process for requesting an
 contentType: question
 editorialStatus: draft
 noindex: true
-sourceCheckedAt: "2026-10-29"
-reviewDueAt: "2026-11-28"
+sourceCheckedAt: "2026-11-01"
+reviewDueAt: "2026-12-01"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -57,7 +57,7 @@ A useful request should be truthful, specific and supported by the evidence requ
 
 ## Temporary paid-expedite pilot: high-volatility notice
 
-As verified on October 29, 2026, the Department of State's [expedited appointment pilot page](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) describes an optional program at selected embassies and consulates through **December 31, 2026**.
+As verified on November 1, 2026, the Department of State's [expedited appointment pilot page](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) describes an optional program at selected embassies and consulates through **December 31, 2026**.
 
 The official page lists these participating locations and launch dates:
 
@@ -88,7 +88,7 @@ Check the official scheduling system for newly released regular slots. The Depar
 
 ### A website offers a paid “expedite” outside the official account
 
-Do not assume it is the Department's pilot. The official option appears only through participating locations and the designated scheduling flow described on the government page. VisaOS does not sell appointments, collect expedite fees or recommend unofficial slot brokers.
+Do not assume it is the Department's pilot. The official option appears only through participating locations and the designated scheduling flow described on the government page. VisaOS does not sell appointments, collect expedite fees or recommend unofficial slot brokers. Do not send a passport image, DS-160 confirmation, payment receipt or account credentials to VisaOS or an unofficial seller.
 
 ### The expedite request is denied
 
