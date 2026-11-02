@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page not found | VisaOS"
+  description="The requested VisaOS page could not be found."
+  noindex
+  errorDocument
+>
+  <section class="wrap article">
+    <p class="eyebrow">Error 404</p>
+    <h1>Page not found</h1>
+    <p class="lead">
+      The page may have moved, or the address may be incorrect. Use one of these verified starting
+      points to continue.
+    </p>
+    <div class="grid" aria-label="VisaOS starting points">
+      <article class="panel">
+        <h2>Home</h2>
+        <p>Return to the VisaOS homepage and choose a starting point.</p>
+        <a href="/">Go to Home →</a>
+      </article>
+      <article class="panel">
+        <h2>U.S. visa hub</h2>
+        <p>Browse source-backed U.S. visa guides and official resources.</p>
+        <a href="/us/">Open the U.S. visa hub →</a>
+      </article>
+      <article class="panel">
+        <h2>Visa Problems</h2>
+        <p>Find general information about common visa application problems.</p>
+        <a href="/us/problems/">Explore Visa Problems →</a>
+      </article>
+    </div>
+  </section>
+</Base>

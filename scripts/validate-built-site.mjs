@@ -7,6 +7,7 @@ import {
   SITEMAP_INDEX_PATH,
 } from '../src/config/site.mjs';
 import { isPublishable } from '../src/lib/content-publication.mjs';
+import { validateErrorDocument } from './error-document-validation.mjs';
 
 const outputDirectory = resolve('dist');
 const articlesDirectory = resolve('src/content/articles');
@@ -72,13 +73,28 @@ if (!existsSync(outputDirectory)) {
 }
 
 const htmlFiles = walk(outputDirectory).filter((file) => file.endsWith('.html'));
+const errorDocumentPath = join(outputDirectory, '404.html');
+const publicHtmlFiles = htmlFiles.filter((file) => file !== errorDocumentPath);
 const articles = walk(articlesDirectory)
   .filter((path) => path.endsWith('.md'))
   .map((file) => ({ file, data: readArticleData(file) }));
 const errors = [];
 const canonicals = new Map();
 
-for (const file of htmlFiles) {
+if (!existsSync(errorDocumentPath)) {
+  errors.push('404.html: required static error document is missing');
+} else {
+  const unpublishedPaths = articles
+    .filter(({ data }) => !isPublishable(data))
+    .map(({ data }) => data.path);
+  for (const error of validateErrorDocument(readFileSync(errorDocumentPath, 'utf8'), {
+    unpublishedPaths,
+  })) {
+    errors.push(`404.html: ${error}`);
+  }
+}
+
+for (const file of publicHtmlFiles) {
   if (routePathForHtml(file).startsWith('/dev-preview/')) {
     errors.push(`${relative(outputDirectory, file)}: development preview route leaked into production output`);
   }
@@ -96,7 +112,7 @@ for (const { data } of articles) {
   }
 }
 
-for (const file of htmlFiles) {
+for (const file of publicHtmlFiles) {
   const route = relative(outputDirectory, file);
   const html = readFileSync(file, 'utf8');
   const titles = matches(html, /<title>([^<]+)<\/title>/g);
@@ -250,6 +266,9 @@ for (const sitemapUrl of sitemapPageUrls) {
   if (!canonicals.has(sitemapUrl)) errors.push(`${sitemapUrl}: sitemap URL has no matching HTML route`);
 }
 
+const errorDocumentUrl = new URL('/404.html', SITE_ORIGIN).toString();
+if (sitemapPageUrls.has(errorDocumentUrl)) errors.push('404.html: error document leaked into the sitemap');
+
 for (const { data } of articles) {
   const articleUrl = new URL(data.canonicalPath, SITE_ORIGIN).toString();
   if (!isPublishable(data) && sitemapPageUrls.has(articleUrl)) {
@@ -262,6 +281,25 @@ const pagefindEntry = join(pagefindDirectory, 'pagefind-entry.json');
 if (!existsSync(pagefindEntry)) {
   errors.push('dist/pagefind/pagefind-entry.json: Pagefind output is missing');
 } else {
+  let pagefindEntryData;
+  try {
+    pagefindEntryData = JSON.parse(readFileSync(pagefindEntry, 'utf8'));
+  } catch {
+    errors.push('dist/pagefind/pagefind-entry.json: Pagefind entry manifest is invalid JSON');
+  }
+
+  const indexedPageCount = pagefindEntryData
+    ? Object.values(pagefindEntryData.languages ?? {}).reduce(
+        (total, language) => total + (language.page_count ?? 0),
+        0,
+      )
+    : 0;
+  if (indexedPageCount !== publicHtmlFiles.length) {
+    errors.push(
+      `Pagefind indexed ${indexedPageCount} pages; expected ${publicHtmlFiles.length} public HTML pages`,
+    );
+  }
+
   const pagefindFiles = walk(pagefindDirectory);
   for (const { data } of articles.filter(({ data }) => !isPublishable(data))) {
     const routeBytes = Buffer.from(`/${data.path}/`);
@@ -278,5 +316,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `Built-site validation passed for ${htmlFiles.length} HTML pages and ${sitemapPageUrls.size} sitemap URLs with production origin ${productionOrigin}.`,
+  `Built-site validation passed for ${publicHtmlFiles.length} public HTML pages, one 404 error document, ${sitemapPageUrls.size} sitemap URLs and matching Pagefind entries with production origin ${productionOrigin}.`,
 );
