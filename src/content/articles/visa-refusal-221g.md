@@ -7,10 +7,13 @@ eyebrow: Visa refusal guide
 summary: A careful guide to document requests, administrative processing and the continuing refused status of a 221(g) case.
 intent: Explain a refusal under INA 221(g) and the applicant's bounded next steps without predicting processing time or outcome.
 contentType: problem
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-11-01"
-reviewDueAt: "2026-12-16"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-11-02"
+reviewedAt: "2026-11-01"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-11-01"
+reviewDueAt: "2026-12-17"
 applicability:
   visaClassifications: [immigrant, nonimmigrant]
 sources:

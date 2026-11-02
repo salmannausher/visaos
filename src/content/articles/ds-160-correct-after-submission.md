@@ -7,10 +7,13 @@ eyebrow: DS-160 problem
 summary: A stage-by-stage guide to the limited official correction process for an already submitted DS-160.
 intent: Explain how correction of a submitted DS-160 differs from editing or retrieving an unfinished application.
 contentType: problem
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-11-01"
-reviewDueAt: "2026-12-16"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-11-02"
+reviewedAt: "2026-11-01"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-11-01"
+reviewDueAt: "2026-12-17"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:

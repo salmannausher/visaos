@@ -18,39 +18,49 @@ function readArticle(file) {
   return { file, data: parse(match[1]), body: match[2] };
 }
 
-const drafts = sprint5Files.map(readArticle);
+const sprint5Articles = sprint5Files.map(readArticle);
+const expectedReviewDueDates = new Map([
+  ['us/ds-160/correct-after-submission', '2026-12-17'],
+  ['us/ds-160/confirmation-page', '2027-01-28'],
+  ['us/problems/214b', '2027-01-31'],
+  ['us/problems/221g', '2026-12-17'],
+  ['us/appointments/expedited-appointment', '2026-12-02'],
+]);
 
-test('only the founder-approved Sprint 5 confirmation-page article can publish', () => {
-  assert.equal(drafts.length, 5);
+test('all five founder-approved Sprint 5 articles are publishable with accurate review metadata', () => {
+  assert.equal(sprint5Articles.length, 5);
 
-  for (const { data, file } of drafts) {
-    const isApprovedConfirmationPage = data.path.endsWith('confirmation-page');
+  for (const { data, file } of sprint5Articles) {
     const expectedSourceCheck = data.path.endsWith('confirmation-page')
+      ? '2026-10-30'
+      : '2026-11-02';
+    const expectedReviewDate = data.path.endsWith('confirmation-page')
       ? '2026-10-30'
       : '2026-11-01';
 
-    if (isApprovedConfirmationPage) {
-      assert.equal(data.editorialStatus, 'approved');
-      assert.equal(data.noindex, false);
-      assert.equal(data.reviewedBy, 'Salman Nausher');
-      assert.equal(data.reviewedAt, '2026-10-30');
-      assert.equal(data.approvedAt, '2026-10-30');
-      assert.equal(data.reviewDueAt, '2027-01-28');
-    } else {
-      assert.equal(data.editorialStatus, 'draft', `${file} must remain draft`);
-      assert.equal(data.noindex, true, `${file} must remain noindex`);
-      assert.equal(data.approvedAt, undefined);
-      assert.equal(data.reviewedAt, undefined);
-      assert.equal(data.reviewedBy, undefined);
-    }
+    assert.equal(data.editorialStatus, 'approved', `${file} must be approved`);
+    assert.equal(data.noindex, false, `${file} must be indexable`);
+    assert.equal(data.reviewedBy, 'Salman Nausher');
+    assert.equal(data.reviewedAt, expectedReviewDate);
+    assert.equal(data.approvedAt, expectedReviewDate);
 
+    assert.equal(data.reviewDueAt, expectedReviewDueDates.get(data.path));
     assert.equal(data.sourceCheckedAt, expectedSourceCheck);
     assert(Array.isArray(data.sources) && data.sources.length > 0, `${file} needs sources`);
   }
 });
 
-test('Sprint 5 drafts include answer structure, scenarios, comparison tables and official citations', () => {
-  for (const { body, file } of drafts) {
+test('the unrelated model fixture remains non-publishable', () => {
+  const model = readArticle('src/content/articles/_model-example.md');
+
+  assert.equal(model.data.editorialStatus, 'draft');
+  assert.equal(model.data.noindex, true);
+  assert.equal(model.data.reviewedBy, undefined);
+  assert.equal(model.data.approvedAt, undefined);
+});
+
+test('Sprint 5 articles include answer structure, scenarios, comparison tables and official citations', () => {
+  for (const { body, file } of sprint5Articles) {
     assert.match(body, /^\*\*[^\n]+\*\*/m, `${file} needs an answer-first opening`);
     assert.match(body, /^## /m, `${file} needs accessible section headings`);
     assert.match(body, /^\| .+ \|$/m, `${file} needs a factual comparison table`);
@@ -65,8 +75,8 @@ test('Sprint 5 drafts include answer structure, scenarios, comparison tables and
 
 test('DS-160 route ownership separates unfinished, submitted-correction and confirmation intents', () => {
   const existing = readArticle('src/content/articles/ds-160-save-and-return.md');
-  const correction = drafts.find(({ data }) => data.path.endsWith('correct-after-submission'));
-  const confirmation = drafts.find(({ data }) => data.path.endsWith('confirmation-page'));
+  const correction = sprint5Articles.find(({ data }) => data.path.endsWith('correct-after-submission'));
+  const confirmation = sprint5Articles.find(({ data }) => data.path.endsWith('confirmation-page'));
 
   assert(correction);
   assert(confirmation);
@@ -79,10 +89,10 @@ test('DS-160 route ownership separates unfinished, submitted-correction and conf
   assert.match(confirmation.body, /Saving a DS-160 and returning later/i);
 });
 
-test('founder-priority drafts preserve documented evidence boundaries', () => {
-  const correction = drafts.find(({ data }) => data.path.endsWith('correct-after-submission'));
-  const confirmation = drafts.find(({ data }) => data.path.endsWith('confirmation-page'));
-  const expedite = drafts.find(({ data }) => data.path.endsWith('expedited-appointment'));
+test('founder-approved articles preserve documented evidence boundaries', () => {
+  const correction = sprint5Articles.find(({ data }) => data.path.endsWith('correct-after-submission'));
+  const confirmation = sprint5Articles.find(({ data }) => data.path.endsWith('confirmation-page'));
+  const expedite = sprint5Articles.find(({ data }) => data.path.endsWith('expedited-appointment'));
 
   assert(correction);
   assert(confirmation);
@@ -99,7 +109,7 @@ test('founder-priority drafts preserve documented evidence boundaries', () => {
   assert.match(expedite.body, /Earlier regular slot/);
   assert.match(expedite.body, /Temporary paid-expedite pilot/);
   assert.match(expedite.body, /December 31, 2026/);
-  assert.match(expedite.body, /verified on November 1, 2026/i);
+  assert.match(expedite.body, /verified on November 2, 2026/i);
   assert.match(expedite.body, /Do not send a passport image, DS-160 confirmation/);
 
   for (const post of [
@@ -114,17 +124,20 @@ test('founder-priority drafts preserve documented evidence boundaries', () => {
   }
 });
 
-test('214(b) and 221(g) remain blocked for independent legal and editorial review', () => {
+test('214(b) and 221(g) record the narrow founder-authorized exception without claiming legal review', () => {
   const review = readFileSync('docs/SPRINT_5_EDITORIAL_REVIEW.md', 'utf8');
-  const refusal214b = drafts.find(({ data }) => data.path.endsWith('214b'));
-  const refusal221g = drafts.find(({ data }) => data.path.endsWith('221g'));
+  const decision = readFileSync('docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md', 'utf8');
+  const refusal214b = sprint5Articles.find(({ data }) => data.path.endsWith('214b'));
+  const refusal221g = sprint5Articles.find(({ data }) => data.path.endsWith('221g'));
 
   assert(refusal214b);
   assert(refusal221g);
-  assert.equal(refusal214b.data.editorialStatus, 'draft');
-  assert.equal(refusal221g.data.editorialStatus, 'draft');
+  assert.equal(refusal214b.data.editorialStatus, 'approved');
+  assert.equal(refusal221g.data.editorialStatus, 'approved');
   assert.match(review, /214\(b\) refusal — independent review hold/);
   assert.match(review, /221\(g\) refusal — independent review hold/);
-  assert.match(review, /PENDING — PUBLICATION BLOCKED/g);
   assert.match(review, /AI-assisted evidence review/i);
+  assert.match(decision, /release-specific policy exception is authorized/i);
+  assert.match(decision, /no attorney or independent qualified immigration-law reviewer approved/i);
+  assert.doesNotMatch(decision, /attorney-approved/i);
 });
