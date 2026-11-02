@@ -1,5 +1,16 @@
 # VisaOS Current Status (context captured 2026-10-23)
 
+## Sprint 5 four-article production release — 2026-11-02
+
+- PR #16 merged the founder-authorized, release-specific policy decision at `d736f14add2520205ff3b5dfc336315b60938c88`. It does not claim attorney or independent qualified immigration-law review and does not change the general workflow for future articles.
+- PR #17 published the four remaining Sprint 5 articles. Its squash merge commit is `368e1b00fdfc8d87fee423873928200367e23d34` on `main`.
+- Cloudflare Pages project `visaos-web` automatically deployed that exact commit successfully. Deployment identifier: `12b98438-8d5b-44cd-9c92-2983eb708907`.
+- Production acceptance confirmed HTTP 200, HTTPS, the expected self-referential canonical, indexable HTML, breadcrumbs, reviewer metadata and official citations for `/us/ds-160/correct-after-submission/`, `/us/problems/214b/`, `/us/problems/221g/` and `/us/appointments/expedited-appointment/`.
+- The live child sitemap contains 14 public URLs and includes all four new routes. The live Pagefind entry manifest reports 14 indexed pages. `robots.txt` allows crawling and references `https://visaos.devshinx.dev/sitemap-index.xml`.
+- Local release validation passed: `npm ci`, `npm run check`, 14/14 tests, `npm run build`, `npm run validate` and `npm audit --audit-level=high` with zero reported vulnerabilities. The generated site contained exactly 14 HTML pages and 14 sitemap URLs with no preview, model-fixture, localhost or placeholder-domain leakage.
+- GitHub Actions remains unavailable because the documented account billing restriction causes jobs to fail before executing steps. The workflow was not weakened; local validation and both Cloudflare preview and production builds passed.
+- Existing operational issue: Cloudflare currently returns HTTP 200 for an unknown route instead of a true 404. This soft-404 behavior did not expose draft content and did not block the authorized release, but a dedicated static `404.html`/Pages routing correction should be implemented and verified separately.
+
 ## Sprint 5 four-article publication gate — 2026-11-01
 
 - PR #15 was squash-merged into `main` at `ec4fb433508a2aa05eddb84944328073e0626ace` as research/editorial integration only. The four remaining Sprint 5 articles remain `draft` and `noindex`.
