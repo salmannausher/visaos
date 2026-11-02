@@ -233,10 +233,10 @@ The cited Department of State pages were opened directly on November 1, 2026. Th
 - [ ] Resolve every exception, continuing-status and cross-page comparison comment from that review.
 - [ ] Obtain Salman Nausher's explicit approval of the resulting final revision.
 
-Until these boxes are completed, no publication branch or publication PR should change any of the four entries to `approved` or `noindex: false`.
+This was the original hold. For the four current articles only, the later founder decision below and the authorized exception in `docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md` supersede the independent-human-review requirement without claiming that such a review occurred. The general workflow remains unchanged for future content.
 
 ## Founder publication decision — 2026-11-01
 
 Salman Nausher confirmed that he reviewed the final versions of the four remaining Sprint 5 articles and wants them published together. This records valid founder editorial approval for the DS-160 correction, 214(b), 221(g) and expedited-appointment articles.
 
-The approval is not an attorney review and does not by itself satisfy the separate independent-human-review hold documented above for 214(b) and 221(g). The exact release-specific policy decision that can resolve that conflict without inventing credentials is recorded in `docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md`. All four articles remain `draft` and `noindex` until that decision is explicitly authorized or genuine independent review evidence is supplied.
+The approval is not an attorney review. Salman Nausher explicitly authorized the narrow release-specific policy exception recorded in `docs/SPRINT_5_PUBLICATION_POLICY_DECISION.md` on 2026-11-01. That decision permits publication of these four current, source-backed educational articles without representing the AI-assisted review as independent legal review and without changing the general workflow for future content.

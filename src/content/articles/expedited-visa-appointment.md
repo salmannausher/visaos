@@ -7,10 +7,13 @@ eyebrow: Appointment guide
 summary: A source-backed comparison of emergency requests, ordinary rescheduling and the temporary paid-expedite pilot.
 intent: Explain eligibility boundaries and the general process for requesting an earlier nonimmigrant visa interview without promising availability.
 contentType: question
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-11-01"
-reviewDueAt: "2026-12-01"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-11-02"
+reviewedAt: "2026-11-01"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-11-01"
+reviewDueAt: "2026-12-02"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
@@ -57,7 +60,7 @@ A useful request should be truthful, specific and supported by the evidence requ
 
 ## Temporary paid-expedite pilot: high-volatility notice
 
-As verified on November 1, 2026, the Department of State's [expedited appointment pilot page](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) describes an optional program at selected embassies and consulates through **December 31, 2026**.
+As verified on November 2, 2026, the Department of State's [expedited appointment pilot page](https://travel.state.gov/en/newsroom/visas/2026/nonimmigrant-visa-expedited-appointment-pilot-program.html) describes an optional program at selected embassies and consulates through **December 31, 2026**.
 
 The official page lists these participating locations and launch dates:
 

@@ -7,10 +7,13 @@ eyebrow: Visa refusal guide
 summary: A plain-language explanation of 214(b), its two main findings and the limits of reapplication.
 intent: Explain a refusal under INA 214(b) without promising that documents, stronger ties or reapplication will produce approval.
 contentType: problem
-editorialStatus: draft
-noindex: true
-sourceCheckedAt: "2026-11-01"
-reviewDueAt: "2027-01-30"
+editorialStatus: approved
+noindex: false
+sourceCheckedAt: "2026-11-02"
+reviewedAt: "2026-11-01"
+reviewedBy: "Salman Nausher"
+approvedAt: "2026-11-01"
+reviewDueAt: "2027-01-31"
 applicability:
   visaClassifications: [nonimmigrant]
 sources:
