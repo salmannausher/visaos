@@ -13,10 +13,16 @@ function readMarkdown(file) {
 const live = readMarkdown('src/content/articles/visitor-visa-basics.md');
 const candidate = readMarkdown('editorial/b1b2-guide/visitor-visa-guide.md');
 
-test('comprehensive candidate preserves the live canonical without changing production', () => {
+test('founder-approved comprehensive guide preserves the live route and publication metadata', () => {
   assert.equal(live.data.canonicalPath, '/us/visitor-visa/');
   assert.equal(live.data.editorialStatus, 'approved');
   assert.equal(live.data.noindex, false);
+  assert.equal(live.data.reviewedBy, 'Salman Nausher');
+  assert.equal(live.data.reviewedAt, '2026-11-04');
+  assert.equal(live.data.approvedAt, '2026-11-04');
+  assert.equal(live.data.sourceCheckedAt, '2026-11-05');
+  assert.equal(live.data.updatedAt, '2026-11-05');
+  assert.equal(live.data.reviewDueAt, '2026-12-05');
 
   assert.equal(candidate.data.canonicalPath, live.data.canonicalPath);
   assert.equal(candidate.data.path, live.data.path);
@@ -31,33 +37,34 @@ test('comprehensive candidate preserves the live canonical without changing prod
   assert(candidate.data.description.length >= 70 && candidate.data.description.length <= 170);
 });
 
-test('candidate contains the supplied videos with explicit nonofficial safeguards', () => {
+test('published guide contains all supplied videos with public-facing safeguards', () => {
   for (const id of ['8QQOvnW0xtQ', 'GIQG7IUZkP4', '74opiv9yyQo']) {
-    assert.match(candidate.body, new RegExp(`https://www\\.youtube\\.com/watch\\?v=${id}`));
+    assert.match(live.body, new RegExp(`https://www\\.youtube\\.com/watch\\?v=${id}`));
   }
 
-  assert.match(candidate.body, /not U\.S\. government policy, legal advice, or approval guarantees/i);
-  assert.match(candidate.body, /Direct HTTP checks returned 200 for all three YouTube URLs/i);
-  assert.match(candidate.body, /not represented as independently verified video metadata/i);
+  assert.match(live.body, /not U\.S\. government policy, legal advice, or approval guarantees/i);
+  assert.match(live.body, /not government policy, legal advice, official endorsement, or a guarantee/i);
+  assert.doesNotMatch(live.body, /HTTP checks|automated editorial tooling|bar status|commit|SHA/i);
 });
 
-test('candidate records volatile official-source coverage and relevant internal links', () => {
+test('published guide records volatile official-source coverage and relevant internal links', () => {
   for (const source of [
     'dos-visitor-visa',
     'dos-b1-allowable-uses',
     'dos-ds160-faq',
     'dos-visa-fees',
+    'dos-interview-waiver',
     'dos-visa-validity',
     'dos-visa-denials',
     'dos-niv-interview-location',
     'dos-visa-bonds',
     'cbp-i94',
   ]) {
-    assert(candidate.data.sources.includes(source), `candidate must reference ${source}`);
+    assert(live.data.sources.includes(source), `published guide must reference ${source}`);
     assert(existsSync(`src/content/sources/${source}.json`), `${source} must exist in the registry`);
   }
 
-  assert(candidate.data.breadcrumbs.some(({ href }) => href === '/us/'));
+  assert(live.data.breadcrumbs.some(({ href }) => href === '/us/'));
 
   for (const route of [
     '/us/ds-160/',
@@ -69,6 +76,6 @@ test('candidate records volatile official-source coverage and relevant internal 
     '/us/problems/214b/',
     '/us/problems/221g/',
   ]) {
-    assert(candidate.body.includes(`](${route})`), `candidate must link to ${route}`);
+    assert(live.body.includes(`](${route})`), `published guide must link to ${route}`);
   }
 });
