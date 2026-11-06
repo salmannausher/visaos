@@ -1,5 +1,15 @@
 # VisaOS Current Status (context captured 2026-10-23)
 
+## Sprint 6A Cloudflare soft-404 release — 2026-11-02
+
+- PR #19 was squash-merged into `main` as `61b5b3d7907ded9877063de660081b66630d7018` after its authorized head `07125490e386083e0d46a345d2829ca910bf8ad7` and five-file scope were reverified.
+- Cloudflare Pages project `visaos-web` automatically deployed the merge commit successfully. Deployment identifier: `6659ed6f-3342-4d0d-9985-e69bf029236e`. No duplicate manual deployment was created.
+- Production acceptance confirmed HTTP 200 for `/`, `/us/`, `/us/problems/214b/` and every URL in the live sitemap. Unknown routes `/does-not-exist-visaos-test-92718/` and `/us/problems/unpublished-test/` now return HTTP 404 with the custom error document instead of homepage content.
+- `/dev-preview/` and `/internal/article-model-example/` return HTTP 404. The error document declares `noindex, nofollow, noarchive`, has no canonical URL or Pagefind content boundary, and does not expose draft content.
+- The live sitemap retains exactly 14 published URLs, and all 14 return HTTP 200. The live Pagefind entry manifest reports 14 indexed public pages. The build contains those 14 public HTML pages plus one special `404.html` error asset.
+- Post-merge local validation passed: `npm ci`, `npm run check`, 17/17 tests, `npm run build`, `npm run validate` and `npm audit --audit-level=high` with zero reported vulnerabilities.
+- GitHub Actions remains unavailable because the documented account billing restriction stops the workflow before repository steps run. The workflow was not weakened; the Cloudflare preview and production deployments both passed.
+
 ## Sprint 5 four-article production release — 2026-11-02
 
 - PR #16 merged the founder-authorized, release-specific policy decision at `d736f14add2520205ff3b5dfc336315b60938c88`. It does not claim attorney or independent qualified immigration-law review and does not change the general workflow for future articles.
