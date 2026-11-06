@@ -35,6 +35,12 @@ PR #21 remains the separate research/editorial-review record. This publication b
 
 The 30-day review interval is intentionally short because the article references multiple high-volatility subjects: visa fees, interview location and waiver rules, visa bonds and a temporary expedited-appointment program. Recheck these sources no later than 2026-12-05 and sooner if the Department of State announces a change.
 
+## Release correction — 2026-11-06
+
+The current Department of State visa-bond page was opened directly at its canonical newsroom URL:
+`https://travel.state.gov/en/newsroom/visas/2026/countries-subject-to-visa-bonds.html`.
+The article link and source-registry URL now use that address. The page continues to support the existing bounded claims: the program is linked to the August 3, 2026 final rule, applicants should pay only after consular-officer direction, and a bond does not guarantee visa issuance. No volatile country list or bond amount was copied into the article, and no substantive guidance changed.
+
 ## Publication and deployment boundary
 
 This branch is ready for a review-only publication pull request after the full local validation suite and generated-output inspection pass. It is not authorization to merge or deploy. A separate founder instruction is required for both.
