@@ -1,0 +1,17 @@
+{
+  "title": "Countries Subject to Visa Bonds",
+  "url": "https://travel.state.gov/en/newsroom/visas/2026/countries-subject-to-visa-bonds.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-11-06",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["B visa bonds", "visa bond payment", "nationality-specific requirements"],
+  "appliesTo": {
+    "visaClassifications": ["B-1", "B-2", "B-1/B-2"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  },
+  "notes": "The program is now supported by an August 3, 2026 final rule. Do not copy its volatile country list or bond amounts into evergreen guidance. A bond does not guarantee issuance, and payment must occur only after consular-officer direction through the official process."
+}

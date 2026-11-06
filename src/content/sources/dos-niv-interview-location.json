@@ -1,0 +1,18 @@
+{
+  "title": "Adjudicating Nonimmigrant Visa Applicants in Their Country of Residence",
+  "url": "https://travel.state.gov/en/newsroom/visas/2026/adjudicating-nonimmigrant-visa--niv--applicants-in-their-country.html",
+  "publisher": "U.S. Department of State",
+  "sourceType": "us-government",
+  "lastChecked": "2026-11-05",
+  "effectiveDate": "2026-07-15",
+  "volatility": "high",
+  "verificationStatus": "verified",
+  "topics": ["nonimmigrant visa interview location", "country of nationality", "country of residence"],
+  "appliesTo": {
+    "visaClassifications": ["nonimmigrant"],
+    "nationalities": [],
+    "residences": [],
+    "posts": []
+  },
+  "notes": "Applicants should generally interview in their country of nationality or residence, or at a designated processing post where applicable. The page lists limited exceptions and warns of longer waits and non-transferable fees elsewhere."
+}
